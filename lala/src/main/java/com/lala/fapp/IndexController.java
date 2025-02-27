@@ -20,20 +20,62 @@ import org.springframework.web.bind.annotation.RequestMapping;
 			// 안 달아주면 정의된 주소를 찾으려고 해도 안된다.
 public class IndexController {
 	
-	@RequestMapping(value = "/index") // localhost:8080/index를 의미한다.
-	public String index() { // 관례적으로 메소드명은 어노테이션에 정의된 것과 동일하게 한다.
-		return "index"; 	// templates/index.html
+	@RequestMapping(value = "/index")	// * 웹 접속 경로 - localhost:8080/index를 의미한다.
+	public String index() { 			// * 관례적으로 메소드명은 어노테이션(@RequestMapping)에 
+										//   정의된 것과 동일하게 한다.
+		return "index"; 				// * templates 폴더 내부의 파일 경로 - 확장자는 생략한다.
+										//   templates/index.html
 		
 	}
 	
 	// 만약 templates 안에 폴더 경로가 추가 되면 폴더명/index로 넣어준다. ↓
-	@RequestMapping(value = "/index2") // localhost:8080/index2를 의미한다.
+	@RequestMapping(value = "/index2") 	// localhost:8080/index2를 의미한다.
 	public String index2() {
-		return "abc/inddex"; // templates/abc/inddex.html
+		return "abc/inddex"; 			// templates/abc/inddex.html
 	}
 	
 	@RequestMapping(value = "/index3")
 	public String index3() {
-		return "abc/indddex"; // templates/abc/indddex.html
+		return "abc/indddex"; 			// templates/abc/indddex.html
+	}
+	
+	@RequestMapping(value = "/helloWorld")
+	public String helloWorld() {
+		return "helloWorld";
+	}
+	
+	@RequestMapping(value = "/aaa/bbb")
+	public String aaaBbb() {
+		return "bbb/aaa";
+	}
+	
+	@RequestMapping(value = "/xxx/yyy/zzz")
+	public String xxxYyyZzz() {
+		return "yyy/zzz";
+	}
+	
+	@RequestMapping(value = "/ttt/yyy")
+	public String tttYyy() {
+		return "zzz/yyy/xxx";
+	}
+	
+	@RequestMapping(value = "/infra/member/loginXdmForm")
+	public String infraMemberLoginXdmForm() {
+		return "adm/v1/tmpname/infra/member/loginForm";
+	}
+	
+	@RequestMapping(value = "/infra/codegroup/codeGroupXdmList")
+	public String infraCodegroupCodeGroupXdmList() {
+		return "adm/v1/tmpname/infra/codegroup/codeGroupList";
+	}
+	
+	@RequestMapping(value = "/infra/codegroup/codeGroupXdmForm")
+	public String infraCodegroupCodeGroupXdmForm() {
+		return "adm/v1/tmpname/infra/codegroup/codeGroupForm";
+	}
+	
+	@RequestMapping(value = "/infra/member/loginUsrForm")
+	public String infraMemberLoginUsrForm() {
+		return "usr/v1/tmpname/infra/member/loginForm";
 	}
 }
