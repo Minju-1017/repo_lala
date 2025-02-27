@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * 초기 접속 페이지 Mapping Url에 대한 정의 파일
  * 
+ * Spring은 특정 어노테이션에 대한 코드들은 실행 클래스가 아니어도 구동이 될때 실행이 된다.
+ * (@Controller도 포함)
+ * 
  * 참고로 index.html 파일이 없으므로
  * resources 폴더 안에 templates 폴더를 만든 후 
  * index.html 파일을 생성해줘야 웹으로 접속이 가능하다. 
