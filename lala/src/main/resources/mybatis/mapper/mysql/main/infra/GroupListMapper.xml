@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Dao 파일의 경로를 넣어준다. -->
+<mapper namespace="com.lala.fapp.grouplist.GroupListDao">
+
+	<!-- Dto 파일의 경로를 넣어준다. (type만 수정) -->
+	<resultMap id="resultMapObj" type="com.lala.fapp.grouplist.GroupListDto"></resultMap>
+	
+	<!-- 
+		#select 쿼리 
+		- id: <mapper> 태그에 정의된 namespace와 일치하는 클래스에 정의된 함수명을 뜻함
+		- resultMap: 정의된 값과 일치하는 <resultMap> 태그의 id를 찾아
+					 해당 type에 정의된 클래스에 결과를 저장한다.
+	-->
+	<select id="selectList" resultMap="resultMapObj">
+		<!-- 쿼리에 ;은 뺀다. -->
+		SELECT
+			seq,
+		    groupName
+		FROM
+			grouplist
+		WHERE 1=1
+		ORDER BY seq DESC
+	</select>
+	
+</mapper>

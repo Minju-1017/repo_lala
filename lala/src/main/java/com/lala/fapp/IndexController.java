@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * index.html 파일을 생성해줘야 웹으로 접속이 가능하다. 
  * (접속 url - localhost:8080/index)
  * 
- * 아래 폴더들은 스프링에서 정해놓은 기본 폴더이다. (규칙처럼)
+ * 아래 폴더들은 스프링에서 (규칙처럼) 정해놓은 기본 폴더이다.
  * resources/templates - html
  * resources/static - css, js..
  */
@@ -25,10 +25,9 @@ public class IndexController {
 	
 	@RequestMapping(value = "/index")	// * 웹 접속 경로 - localhost:8080/index를 의미한다.
 	public String index() { 			// * 관례적으로 메소드명은 어노테이션(@RequestMapping)에 
-										//   정의된 것과 동일하게 한다.
+										//   정의된 것 value 값과 동일하게 한다.
 		return "index"; 				// * templates 폴더 내부의 파일 경로 - 확장자는 생략한다.
 										//   templates/index.html
-		
 	}
 	
 	// 만약 templates 안에 폴더 경로가 추가 되면 폴더명/index로 넣어준다. ↓
