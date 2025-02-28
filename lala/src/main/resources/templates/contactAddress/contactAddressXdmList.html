@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td><h4>No.</h4></td>
+			<td><h4>메인</h4></td>
+			<td><h4>타입</h4></td>
+			<td><h4>우편번호</h4></td>
+			<td><h4>주소</h4></td>
+			<td><h4>contact_seq</h4></td>
+		</tr>
+		<tr th:each="list : ${contactAddress}"> 	
+			<td th:text="${list.seq}"></td>
+			<td th:text="${list.main}"></td>
+			<td th:text="${list.type}"></td>
+			<td th:text="${list.zipcode}"></td>
+			<td th:text="${list.address}"></td>
+			<td th:text="${list.contact_seq}"></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

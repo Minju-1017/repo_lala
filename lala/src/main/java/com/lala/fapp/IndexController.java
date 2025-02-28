@@ -41,26 +41,6 @@ public class IndexController {
 		return "abc/indddex"; 			// templates/abc/indddex.html
 	}
 	
-	@RequestMapping(value = "/helloWorld")
-	public String helloWorld() {
-		return "helloWorld";
-	}
-	
-	@RequestMapping(value = "/aaa/bbb")
-	public String aaaBbb() {
-		return "bbb/aaa";
-	}
-	
-	@RequestMapping(value = "/xxx/yyy/zzz")
-	public String xxxYyyZzz() {
-		return "yyy/zzz";
-	}
-	
-	@RequestMapping(value = "/ttt/yyy")
-	public String tttYyy() {
-		return "zzz/yyy/xxx";
-	}
-	
 	@RequestMapping(value = "/infra/member/loginXdmForm")
 	public String infraMemberLoginXdmForm() {
 		return "adm/v1/tmpname/infra/member/loginForm";

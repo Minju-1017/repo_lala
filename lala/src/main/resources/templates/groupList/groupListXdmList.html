@@ -1,10 +1,25 @@
-<table>
-	<tr>
-		<td>seq</td>
-		<td>groupName</td>
-	</tr>
-	<tr>
-		<td>1</td>
-		<td>MJ</td>
-	</tr>
-</table>
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"> <!-- thymeleaf 기능을 사용하겠다는 명시 -->
+<head>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td><h4>seq</h4></td>
+			<td><h4>groupName</h4></td>
+		</tr>
+<!--
+	th: thymeleaf 약어
+	each: 향상된 for문과 동일(변수명 : Attribute명)
+	${groupList}: Controller의 Attribute에 추가된 "groupList"
+	list: 변수
+-->
+		<tr th:each="list : ${groupList}"> 	
+			<td th:text="${list.seq}"></td>
+			<td th:text="${list.groupName}"></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

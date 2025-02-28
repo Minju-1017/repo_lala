@@ -1,11 +1,8 @@
 package com.lala.fapp.grouplist;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 @Service // Service의 필수 어노테이션
@@ -23,10 +20,16 @@ public class GroupListService { // 로직을 정의 하는 부분
 	
 								// Service는 Dao만 호출
 	
+//	public List<GroupListDto> selectList() {
+//		List<GroupListDto> groupListDtos = new ArrayList<>();
+//		groupListDtos = groupListDao.selectList();
+//		
+//		return groupListDtos;
+//	}
+	
+	// 위와 같이 List<GroupListDto>를 직접 생성해서 해도 되지만,
+	// groupListDao에서 바로 selectList()를 받아와도 된다.
 	public List<GroupListDto> selectList() {
-		List<GroupListDto> groupListDtos = new ArrayList<>();
-		groupListDtos = groupListDao.selectList();
-		
-		return groupListDtos;
+		return groupListDao.selectList();
 	}
 }
