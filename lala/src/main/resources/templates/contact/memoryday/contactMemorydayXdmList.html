@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+    
+	<table>
+		<tr>
+			<td><h4>No.</h4></td>
+			<td><h4>메인</h4></td>
+			<td><h4>생년월일</h4></td>
+			<td><h4>양력/음력</h4></td>
+			<td><h4>contact_seq</h4></td>
+		</tr>
+		<tr th:each="list : ${contactMemoryday}"> 	
+			<td th:text="${list.seq}"></td>
+			<td th:text="${list.main}"></td>
+			<td th:text="${list.type}"></td>
+			<td>
+				<a th:href="@{/contact/memoryday/contactMemorydayXdmItem(seq=${list.seq})}"
+					th:text="${list.date}"></a>
+			</td>
+			<td th:text="${list.solar}"></td>
+			<td th:text="${list.contact_seq}"></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

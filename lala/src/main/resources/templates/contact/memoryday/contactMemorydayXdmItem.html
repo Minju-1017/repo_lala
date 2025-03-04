@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+	
+	<table>
+		<tr>
+			<td><h4>No.</h4></td>
+			<td><h4>생년월일</h4></td>
+			<td><h4>양력/음력</h4></td>
+		</tr>
+		<tr> 	
+			<td th:text="${contactMemorydayItem.seq}"></td>
+			<td th:text="${contactMemorydayItem.date}"></td>
+			<td th:text="${contactMemorydayItem.solar}"></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

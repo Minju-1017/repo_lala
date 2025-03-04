@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+    
+	<table>
+		<tr>
+			<td><h4>No.</h4></td>
+			<td><h4>메인</h4></td>
+			<td><h4>구분</h4></td>
+			<td><h4>주소</h4></td>
+			<td><h4>contact_seq</h4></td>
+		</tr>
+		<tr th:each="list : ${contactMsgsns}"> 	
+			<td th:text="${list.seq}"></td>
+			<td th:text="${list.main}"></td>
+			<td th:text="${list.type}"></td>
+			<td>
+				<a th:href="@{/contact/msgsns/contactMsgsnsXdmItem(seq=${list.seq})}"
+					th:text="${list.address}"></a>
+			</td>
+			<td th:text="${list.contact_seq}"></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

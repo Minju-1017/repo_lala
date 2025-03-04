@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+	
+	<table>
+		<tr>
+			<td><h4>No.</h4></td>
+			<td><h4>구분</h4></td>
+			<td><h4>연락처</h4></td>
+		</tr>
+		<tr> 	
+			<td th:text="${contactPhoneItem.seq}"></td>
+			<td th:text="${contactPhoneItem.type}"></td>
+			<td th:text="${contactPhoneItem.number}"></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

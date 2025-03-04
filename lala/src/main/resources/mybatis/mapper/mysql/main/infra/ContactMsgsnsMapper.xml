@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lala.fapp.contact.msgsns.ContactMsgsnsDao">
+
+	<resultMap id="resultMapObj" type="com.lala.fapp.contact.msgsns.ContactMsgsnsDto"></resultMap>
+
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT
+			seq,
+		    main,
+		    type,
+		    address,
+		    contact_seq
+		FROM
+			contact_msgsns
+
+	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			seq,
+			type,
+			address
+		FROM
+			contact_msgsns
+		WHERE 1=1
+		AND seq=#{seq}
+	</select>
+	
+</mapper>

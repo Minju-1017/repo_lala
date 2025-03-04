@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td><h4>No.</h4></td>
+			<td><h4>메인</h4></td>
+			<td><h4>구분</h4></td>
+			<td><h4>연락처</h4></td>
+			<td><h4>contact_seq</h4></td>
+		</tr>
+		<tr th:each="list : ${contactPhone}"> 	
+			<td th:text="${list.seq}"></td>
+			<td th:text="${list.main}"></td>
+			<td th:text="${list.type}"></td>
+			<td>
+				<a th:href="@{/contact/phone/contactPhoneXdmItem(seq=${list.seq})}"
+					th:text="${list.number}"></a>
+			</td>
+			<td th:text="${list.contact_seq}"></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

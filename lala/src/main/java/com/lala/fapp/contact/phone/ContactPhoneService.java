@@ -1,0 +1,20 @@
+package com.lala.fapp.contact.phone;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ContactPhoneService {
+	
+	@Autowired
+	ContactPhoneDao contactPhoneDao; 
+	
+	public List<ContactPhoneDto> selectList() {
+		return contactPhoneDao.selectList();
+	}
+	
+	public ContactPhoneDto selectOne(ContactPhoneDto contactPhoneDto) {
+		return contactPhoneDao.selectOne(contactPhoneDto);
+	}
+}
