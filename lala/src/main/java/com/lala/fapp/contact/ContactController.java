@@ -19,8 +19,8 @@ public class ContactController {
 	}
 	
 	@RequestMapping(value = "/contact/contactXdmItem")
-	public String contactXdmItem(Model model) {
-		model.addAttribute("contactItem", contactService.selectOne());
+	public String contactXdmItem(Model model, ContactDto contactDto) {
+		model.addAttribute("contactItem", contactService.selectOne(contactDto));
 		return "contact/contactXdmItem";
 	}
 	

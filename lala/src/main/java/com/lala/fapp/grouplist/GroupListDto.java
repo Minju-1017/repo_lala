@@ -13,16 +13,13 @@ public class GroupListDto {
 		return seq;
 	}
 
-
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}
 
-
 	public String getGroupName() {
 		return groupName;
 	}
-
 
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;

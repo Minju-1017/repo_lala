@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td><h4>No.</h4></td>
+			<td><h4>메인</h4></td>
+			<td><h4>contact_seq</h4></td>
+			<td><h4>grouplist_seq</h4></td>
+		</tr>
+		<tr th:each="list : ${contactGroupList}"> 	
+			<td>
+				<a th:href="@{/contact/grouplist/contactGroupListXdmItem(seq=${list.seq})}"
+					th:text="${list.seq}"></a>
+			</td>
+			<td th:text="${list.main}"></td>
+			<td th:text="${list.contact_seq}"></td>
+			<td th:text="${list.grouplist_seq}"></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

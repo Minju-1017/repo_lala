@@ -23,7 +23,17 @@
 		</tr>
 	</table>
 
-<!-- 데이터 읽어오기(그룹 이름을 클릭하면 해당 그룹만 보여주기) -->
+<!--
+	데이터 읽어오기(그룹 이름을 클릭하면 해당 그룹만 보여주기)
+	=> Get 방식
+	ex) http://aaa.com/a.html?id=1&seq=2
+	
+	?변수=값&변수=값변수=값&변수=값...
+	? - 변수와 값이 뒤에 붙는다는 표시
+	& - 한가지 변수와 값 사이의 구분자
+	
+	참고) ? 이하가 보이지 않고 주소로만 보이는 방식은 Post 방식
+-->
 	<table>
 		<tr>
 			<td><h4>seq</h4></td>
@@ -32,7 +42,8 @@
 		<tr th:each="list : ${groupList}"> 	
 			<td th:text="${list.seq}"></td>
 			<td>
-				<a th:href="@{/groupList/groupListXdmItem}" th:text="${list.groupName}"></a>
+				<a th:href="@{/grouplist/groupListXdmItem(seq=${list.seq})}"
+					th:text="${list.groupName}"></a>
 			</td>
 		</tr>
 	</table>

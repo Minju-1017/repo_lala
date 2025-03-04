@@ -37,7 +37,7 @@ public class GroupListService { // 로직을 정의 하는 부분
 	}
 	
 	// 조건에 맞는 데이터 1줄만 읽어오기
-	public GroupListDto selectOne() {
-		return groupListDao.selectOne();
+	public GroupListDto selectOne(GroupListDto groupListDto) {
+		return groupListDao.selectOne(groupListDto);
 	}
 }

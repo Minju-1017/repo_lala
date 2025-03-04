@@ -32,7 +32,8 @@
 		FROM
 			grouplist
 		WHERE 1=1
-		AND seq=1
+		AND seq=#{seq} <!-- seq를 동적으로 받겠다는 표시 # 
+							Dto의 seq와 html의 파라메터 id 값과 동일 -->
 	</select>
 	
 </mapper>

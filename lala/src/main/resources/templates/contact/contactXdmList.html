@@ -29,7 +29,10 @@
 			<td th:text="${list.firstName}"></td>
 			<td th:text="${list.appellation}"></td>
 			<td th:text="${list.id}"></td>
-			<td th:text="${list.nickname}"></td>
+			<td>
+				<a th:href="@{/contact/contactXdmItem(seq=${list.seq})}"
+				th:text="${list.nickname}"></a>
+			</td>
 			<td th:text="${list.memo}"></td>
 		</tr>
 	</table>

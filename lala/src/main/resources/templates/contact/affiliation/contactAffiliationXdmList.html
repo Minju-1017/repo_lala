@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td><h4>No.</h4></td>
+			<td><h4>메인</h4></td>
+			<td><h4>회사</h4></td>
+			<td><h4>소속</h4></td>
+			<td><h4>직책</h4></td>
+			<td><h4>contact_seq</h4></td>
+		</tr>
+		<tr th:each="list : ${contactAffiliation}"> 	
+			<td th:text="${list.seq}"></td>
+			<td th:text="${list.main}"></td>
+			<td th:text="${list.company}"></td>
+			<td th:text="${list.department}"></td>
+			<td>
+				<a th:href="@{/contact/affiliation/contactAffiliationXdmItem(seq=${list.seq})}"
+					th:text="${list.position}"></a>
+			</td>
+			<td th:text="${list.contact_seq}"></td>
+		</tr>
+	</table>
+		    
+</body>
+</html>

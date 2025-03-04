@@ -21,5 +21,6 @@ public interface GroupListDao {
 	public List<GroupListDto> selectList(); 
 	
 	// 조건에 맞는 데이터 1줄만 읽어오기
-	public GroupListDto selectOne(); 
+	public GroupListDto selectOne(GroupListDto groupListDto);
+	
 }
