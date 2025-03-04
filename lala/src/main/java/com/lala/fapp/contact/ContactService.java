@@ -12,4 +12,8 @@ public class ContactService {
 	public List<ContactDto> selectList() {
 		return contactDao.selectList();
 	}
+	
+	public ContactDto selectOne() {
+		return contactDao.selectOne();
+	}
 }

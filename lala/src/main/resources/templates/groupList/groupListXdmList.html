@@ -4,20 +4,36 @@
 </head>
 <body>
 
+<!-- 데이터 읽어오기(기능없음) -->
 	<table>
 		<tr>
 			<td><h4>seq</h4></td>
 			<td><h4>groupName</h4></td>
 		</tr>
-<!--
-	th: thymeleaf 약어
-	each: 향상된 for문과 동일(변수명 : Attribute명)
-	${groupList}: Controller의 Attribute에 추가된 "groupList"
-	list: 변수
--->
+		
+		<!--
+			th: thymeleaf 약어
+			each: 향상된 for문과 동일(변수명 : Attribute명)
+			${groupList}: Controller의 Attribute에 추가된 "groupList"
+			list: 변수
+		-->
 		<tr th:each="list : ${groupList}"> 	
 			<td th:text="${list.seq}"></td>
 			<td th:text="${list.groupName}"></td>
+		</tr>
+	</table>
+
+<!-- 데이터 읽어오기(그룹 이름을 클릭하면 해당 그룹만 보여주기) -->
+	<table>
+		<tr>
+			<td><h4>seq</h4></td>
+			<td><h4>groupName</h4></td>
+		</tr>
+		<tr th:each="list : ${groupList}"> 	
+			<td th:text="${list.seq}"></td>
+			<td>
+				<a th:href="@{/groupList/groupListXdmItem}" th:text="${list.groupName}"></a>
+			</td>
 		</tr>
 	</table>
 	

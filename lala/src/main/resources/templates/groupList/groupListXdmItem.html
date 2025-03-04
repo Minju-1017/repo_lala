@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<!-- 
+	조건에 맞는 데이터 1줄만 가져오기
+	이때는 each:(향상된 for문)를 사용할 필요가 없다.
+	때문에 th:text의 변수명은 Controller에 명시된 Attribute명을 바로 사용한다.
+ -->
+
+	<table>
+		<tr>
+			<td><h4>seq</h4></td>
+			<td><h4>groupName</h4></td>
+		</tr>
+		<tr> 	
+			<td th:text="${groupListItem.seq}"></td>
+			<td th:text="${groupListItem.groupName}"></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

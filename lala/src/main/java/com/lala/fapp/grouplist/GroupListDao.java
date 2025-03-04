@@ -19,4 +19,7 @@ public interface GroupListDao {
 	
 	// 메소드명은 Mapper.xml의 <select> 태그의 id와 동일하게 한다
 	public List<GroupListDto> selectList(); 
+	
+	// 조건에 맞는 데이터 1줄만 읽어오기
+	public GroupListDto selectOne(); 
 }

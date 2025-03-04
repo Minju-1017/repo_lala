@@ -24,4 +24,15 @@
 		ORDER BY seq DESC
 	</select>
 	
+	<!-- 조건에 맞는 데이터 1줄만 읽어오기 -->
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			seq,
+		    groupName
+		FROM
+			grouplist
+		WHERE 1=1
+		AND seq=1
+	</select>
+	
 </mapper>

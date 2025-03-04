@@ -12,10 +12,16 @@ public class ContactController {
 	ContactService contactService;
 	
 	@RequestMapping(value = "/contact/contactXdmList")
-	public String groupListXdmList(Model model) {
+	public String contactXdmList(Model model) {
 		model.addAttribute("contact", contactService.selectList());
 		
 		return "contact/contactXdmList";
+	}
+	
+	@RequestMapping(value = "/contact/contactXdmItem")
+	public String contactXdmItem(Model model) {
+		model.addAttribute("contactItem", contactService.selectOne());
+		return "contact/contactXdmItem";
 	}
 	
 }

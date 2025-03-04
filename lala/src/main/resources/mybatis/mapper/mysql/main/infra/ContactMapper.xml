@@ -23,4 +23,14 @@
 		ORDER BY seq ASC
 	</select>
 	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			seq,
+		    nickname
+		FROM
+			contact
+		WHERE 1=1
+		AND seq=1
+	</select>
+	
 </mapper>
