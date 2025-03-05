@@ -24,4 +24,25 @@ public class ContactController {
 		return "contact/contactXdmItem";
 	}
 	
+	@RequestMapping(value = "/contact/contactXdmForm")
+	public String contactXdmForm() {
+		return "contact/contactXdmForm";
+	}
+	
+	@RequestMapping(value = "/contact/contactXdmInst")
+	public String contactXdmInst(ContactDto contactDto) {
+		System.out.println("contactDto.getSeq(): " + contactDto.getSeq()); 
+		System.out.println("contactDto.getLastName(): " + contactDto.getLastName());
+		System.out.println("contactDto.getFirstName(): " + contactDto.getFirstName());
+		System.out.println("contactDto.getId(): " + contactDto.getId());
+		System.out.println("contactDto.getNickname(): " + contactDto.getNickname());
+		System.out.println("contactDto.getMemo(): " + contactDto.getMemo());
+		
+		contactService.insert(contactDto);
+		
+		System.out.println("contactDto.getSeq(): " + contactDto.getSeq()); 
+		
+		return "redirect:/contact/contactXdmList";
+	}
+	
 }

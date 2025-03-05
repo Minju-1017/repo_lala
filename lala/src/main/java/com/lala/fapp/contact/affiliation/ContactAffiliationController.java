@@ -25,4 +25,15 @@ public class ContactAffiliationController {
 		return "contact/affiliation/contactAffiliationXdmItem";
 	}
 	
+	@RequestMapping(value = "/contact/affiliation/contactAffiliationXdmForm")
+	public String contactAffiliationXdmForm() {
+		return "contact/affiliation/contactAffiliationXdmForm";
+	}
+	
+	@RequestMapping(value = "/contact/affiliation/contactAffiliationXdmInst")
+	public String contactAffiliationXdmInst(ContactAffiliationDto contactAffiliationDto) {
+		contactAffiliationService.insert(contactAffiliationDto);
+		return "redirect:/contact/affiliation/contactAffiliationXdmList";
+	}
+	
 }

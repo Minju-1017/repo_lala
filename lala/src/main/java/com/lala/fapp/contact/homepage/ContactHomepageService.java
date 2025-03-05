@@ -17,4 +17,8 @@ public class ContactHomepageService {
 	public ContactHomepageDto selectOne(ContactHomepageDto contactHomepageDto) {
 		return contactHomepageDao.selectOne(contactHomepageDto);
 	}
+	
+	public int insert(ContactHomepageDto contactHomepageDto) {
+		return contactHomepageDao.insert(contactHomepageDto);
+	}
 }

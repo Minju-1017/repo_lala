@@ -25,4 +25,19 @@
 		AND seq=#{seq}
 	</select>
 	
+	<insert id="insert">
+		INSERT INTO contact_grouplist
+		(
+			main,
+		    contact_seq,
+		    grouplist_seq
+		)
+		VALUES
+		(
+			#{main},
+		    #{contact_seq},
+		    #{grouplist_seq}
+		)
+	</insert>
+	
 </mapper>

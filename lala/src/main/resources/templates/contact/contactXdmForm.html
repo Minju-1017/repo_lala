@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+
+	<form action="/contact/contactXdmInst" id="form" method="post">
+		seq: <input type="text" id="seq" name="seq" disabled><br>
+	    favorite: <input type="text" id="favorite" name="favorite"><br>
+	    lastName: <input type="text" id="lastName" name="lastName"><br>
+	    firstName: <input type="text" id="firstName" name="firstName"><br>
+	    id: <input type="text" id="id" name="id"><br>
+	    nickname: <input type="text" id="nickname" name="nickname"><br>
+	    memo: <input type="text" id="memo" name="memo"><br>
+	    <button type="button" id="btnSave">저장</button>
+	</form>
+	
+	<script type="text/javascript">
+		document.getElementById("btnSave").onclick = function() {
+			document.getElementById("form").submit();
+		}
+	</script>
+</body>
+</html>

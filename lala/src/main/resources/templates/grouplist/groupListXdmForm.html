@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<!-- 
+	데이터 등록하기
+	
+	html - js - Controller
+	중간에 js가 개입해 데이터 오류 방지를 한다.
+	java에서 하지 않는 이유는 사용자 컴퓨터의 자원을 사용하기 위함 (시간과 자원 관리에 더 효율적임)
+	java에서 중복 체크 하는 경우도 있음. 그러나 기본적으로는 js에서 먼저 다 함
+ -->
+	
+	<!-- 
+		action 태그로 form 안에 있는 데이터를 보내기
+		변수명을 전부(db, java, html...) 동일하게 하면 Spring에서 자동으로 매칭시킨다.
+		
+		*데이터 보내는 순서: submit 호출 -> 입력된 데이터 action에 정의된 주소로 전송
+		
+		*form 태그
+			- 사용자가 입력한 데이터를 어딘가로 보낼때는 post 또는 get 2가지 방식으로 한다.
+			  post: 데이터가 드러나지 않음
+			  get: 데이터가 보임 (http://주소/?seq=값&name=값...)
+			  사용시에는 "post" 부분만 "get"으로 변경. 나머지는 동일
+			- enctype="multipart/form-data" => 파일 전송 시 추가 되는 옵션
+		
+		*input 태그의 name="" => 변수명
+		*button 태그의 type 옵션
+			- submit: 작동 한다. 그러나 js event를 사용할 수 없다.
+			- button: 작동을 안한다. 그러나 js 사용하려면 button을 사용한다. 
+		
+		*submit 호출 -> 입력된 데이터 action 주소로 전송
+		
+		*id와 name은 중복 가능. id끼리는 중복 불가
+	 -->
+	<form action="/grouplist/groupListXdmInst" method="post" id="form">
+		seq: <input type="text" name="seq" id="seq" maxlength="10" disabled />
+		groupName: <input type="text" name="groupName" id="groupName" 
+						placeholder="그룹 이름을 입력하세요."/>
+		<button type="button" id="btnSave">저장</button>
+	</form>
+	
+	<!-- 
+		Javascript는 Event가 발생됬을 때를 캐치해 처리한다.
+		
+		*Dom(document): 눈에 보이는 것은 html, 보이지 않는 곳에 있는 것은 Dom
+						JS는 Dom을 컨트롤한다.
+		
+		*btnSave: ID 값. 중복 불가. html 태그의 id와 일치 시키기
+		
+		*onclick/onchange: onclick - 클릭시, onchange - 내용이 바꼈을 때
+	-->
+	
+	<script type="text/javascript">
+		// 버튼이 클릭됬을 때 해야할 액션
+		document.getElementById("btnSave").onclick = function() {
+			// form id를 가진 부분의 데이터를 submit 시키기
+			document.getElementById("form").submit();
+		}
+		
+		/*
+		document.getElementById("groupName").onclick = function() {
+			alert("groupName");
+		}
+		*/
+		
+		// 내용이 바꼈을 때 해야할 액션
+		/*
+		document.getElementById("groupName").onchange = function() {
+			alert("groupName change");
+		}
+		*/
+	</script>
+	
+</body>
+</html>

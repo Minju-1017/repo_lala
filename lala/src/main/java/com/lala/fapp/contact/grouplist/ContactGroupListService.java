@@ -17,4 +17,8 @@ public class ContactGroupListService {
 	public ContactGroupListDto selectOne(ContactGroupListDto contactGroupListDto) {
 		return contactGroupListDao.selectOne(contactGroupListDto);
 	}
+	
+	public int insert(ContactGroupListDto contactGroupListDto) {
+		return contactGroupListDao.insert(contactGroupListDto);
+	}
 }

@@ -9,5 +9,6 @@ public interface ContactEmailDao {
 	
 	public List<ContactEmailDto> selectList(); 
 	public ContactEmailDto selectOne(ContactEmailDto contactEmailDto); 
+	public int insert(ContactEmailDto contactEmailDto); 
 	
 }

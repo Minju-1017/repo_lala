@@ -25,4 +25,15 @@ public class ContactGroupListController {
 		return "contact/grouplist/contactGroupListXdmItem";
 	}
 	
+	@RequestMapping(value = "/contact/grouplist/contactGroupListXdmForm")
+	public String contactGroupListXdmForm() {
+		return "contact/grouplist/contactGroupListXdmForm";
+	}
+	
+	@RequestMapping(value = "/contact/grouplist/contactGroupListXdmInst")
+	public String contactGroupListXdmInst(ContactGroupListDto contactGroupListDto) {
+		contactGroupListService.insert(contactGroupListDto);
+		return "redirect:/contact/grouplist/contactGroupListXdmList";
+	}
+	
 }

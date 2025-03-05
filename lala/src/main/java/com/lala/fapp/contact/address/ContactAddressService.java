@@ -17,4 +17,8 @@ public class ContactAddressService {
 	public ContactAddressDto selectOne(ContactAddressDto contactAddressDto) {
 		return contactAddressDao.selectOne(contactAddressDto);
 	}
+	
+	public int insert(ContactAddressDto contactAddressDto) {
+		return contactAddressDao.insert(contactAddressDto);
+	}
 }

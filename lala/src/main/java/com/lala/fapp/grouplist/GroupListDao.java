@@ -23,4 +23,7 @@ public interface GroupListDao {
 	// 조건에 맞는 데이터 1줄만 읽어오기
 	public GroupListDto selectOne(GroupListDto groupListDto);
 	
+	// 데이터 1개 추가 (몇 번의 update/insert/delete 했는지를 return)
+	public int insert(GroupListDto groupListDto);
+	
 }

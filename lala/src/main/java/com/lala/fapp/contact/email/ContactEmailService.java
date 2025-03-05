@@ -17,4 +17,8 @@ public class ContactEmailService {
 	public ContactEmailDto selectOne(ContactEmailDto contactEmailDto) {
 		return contactEmailDao.selectOne(contactEmailDto);
 	}
+	
+	public int insert(ContactEmailDto contactEmailDto) {
+		return contactEmailDao.insert(contactEmailDto);
+	}
 }

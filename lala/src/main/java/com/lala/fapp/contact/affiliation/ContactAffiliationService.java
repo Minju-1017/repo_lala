@@ -17,4 +17,8 @@ public class ContactAffiliationService {
 	public ContactAffiliationDto selectOne(ContactAffiliationDto contactAffiliationDto) {
 		return contactAffiliationDao.selectOne(contactAffiliationDto);
 	}
+	
+	public int insert(ContactAffiliationDto contactAffiliationDto) {
+		return contactAffiliationDao.insert(contactAffiliationDto);
+	}
 }

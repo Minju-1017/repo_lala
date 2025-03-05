@@ -25,4 +25,19 @@
 		AND seq=#{seq}
 	</select>
 	
+	<insert id="insert">
+		INSERT INTO contact_email
+		(
+		    main,
+		    email,
+		    contact_seq
+		)
+		VALUES
+		(
+			#{main},
+		    #{email},
+		    #{contact_seq}
+		)
+	</insert>
+	
 </mapper>

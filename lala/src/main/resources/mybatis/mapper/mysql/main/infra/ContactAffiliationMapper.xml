@@ -27,4 +27,23 @@
 		AND seq=#{seq}
 	</select>
 	
+	<insert id="insert">
+		INSERT INTO contact_affiliation
+		(
+		    main,
+		    company,
+		    department,
+		    position,
+		    contact_seq
+		)
+		VALUES
+		(
+			#{main},
+		    #{company},
+		    #{department},
+		    #{position},
+		    #{contact_seq}
+		)
+	</insert>
+	
 </mapper>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+	
+	<form action="/contact/affiliation/contactAffiliationXdmInst" method="post" id="form">
+		main: <input id="main" name="main"><br/>
+	    company: <input id="company" name="company"><br/>
+	    department: <input id="department" name="department"><br/>
+	    position: <input id="position" name="position"><br/>
+	    contact_seq: <input id="contact_seq" name="contact_seq"><br/>
+	    <button type="button" id="btnSave">저장</button>
+	</form>
+	
+	<script type="text/javascript">
+		document.getElementById("btnSave").onclick = function() {
+			document.getElementById("form").submit();
+		}
+	</script>
+	
+</body>
+</html>

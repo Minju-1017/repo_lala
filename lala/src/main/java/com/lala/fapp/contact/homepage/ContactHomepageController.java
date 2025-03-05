@@ -25,4 +25,15 @@ public class ContactHomepageController {
 		return "contact/homepage/contactHomepageXdmItem";
 	}
 	
+	@RequestMapping(value = "/contact/homepage/contactHomepageXdmForm")
+	public String contactHomepageXdmForm() {
+		return "contact/homepage/contactHomepageXdmForm";
+	}
+	
+	@RequestMapping(value = "/contact/homepage/contactHomepageXdmInst")
+	public String contactHomepageXdmInst(ContactHomepageDto contactHomepageDto) {
+		contactHomepageService.insert(contactHomepageDto);
+		return "redirect:/contact/homepage/contactHomepageXdmList";
+	}
+	
 }

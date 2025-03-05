@@ -25,4 +25,15 @@ public class ContactEmailController {
 		return "contact/email/contactEmailXdmItem";
 	}
 	
+	@RequestMapping(value = "/contact/email/contactEmailXdmForm")
+	public String contactEmailXdmForm() {
+		return "contact/email/contactEmailXdmForm";
+	}
+	
+	@RequestMapping(value = "/contact/email/contactEmailXdmInst")
+	public String contactEmailXdmInst(ContactEmailDto contactEmailDto) {
+		contactEmailService.insert(contactEmailDto);
+		return "redirect:/contact/email/contactEmailXdmList";
+	}
+	
 }

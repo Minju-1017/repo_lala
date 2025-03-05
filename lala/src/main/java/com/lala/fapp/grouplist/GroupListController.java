@@ -54,4 +54,32 @@ public class GroupListController {
 		return "grouplist/groupListXdmItem";
 	}
 	
+	/**
+	 * 데이터 입력 폼
+	 * @return
+	 */
+	@RequestMapping(value = "/grouplist/groupListXdmForm")
+	public String groupListXdmForm() {
+		return "grouplist/groupListXdmForm";
+	}
+	
+	/**
+	 * 입력한 데이터 저장하기
+	 * @return redirect: 데이터 저장 후 돌아갈 주소(List)
+	 */
+	@RequestMapping(value = "/grouplist/groupListXdmInst")
+	public String groupListXdmInst(GroupListDto groupListDto) {
+		// seq는 자동 증가 값이라 입력을 안했으므로, null 출력
+		System.out.println("groupListDto.getSeq(): " + groupListDto.getSeq()); 
+		System.out.println("groupListDto.getGroupName(): " + groupListDto.getGroupName());
+		
+		groupListService.insert(groupListDto);
+		
+		// 입력 후에는 자동으로 들어간 값 출력
+		// Mapper에서 SELECT last_insert_id() 쿼리로 가져옴
+		System.out.println("groupListDto.getSeq(): " + groupListDto.getSeq()); 	
+		
+		return "redirect:/grouplist/groupListXdmList";
+	}
+	
 }

@@ -36,4 +36,31 @@
 							Dto의 seq와 html의 파라메터 id 값과 동일 -->
 	</select>
 	
+	<!-- 
+		데이터 1개 추가 
+		몇 번의 update/insert/delete 했는지를 return
+	-->
+	<insert id="insert"> <!-- resultMap은 없어도 된다. return 할 것이 없으므로 -->
+		INSERT INTO grouplist
+		(
+			<!-- seq, --> <!-- 자동 증가 값은 입력하지 않는다. -->
+		    groupName
+		)
+		VALUES 
+		(
+			<!-- #{seq}, -->
+		    #{groupName}
+		)
+		
+		<!-- 
+			마지막에 insert한 Data의 key값을 가져와 Dto에 담아준다. 
+			resultType은 Dto에 정의 된 타입으로 한다.
+			keyProperty은 DB에 저장 된 키값으로 한다. (모든 개발 파일 전부 동일하게 맞춰줌)
+			last_insert_id()는 My Sql에서 제공하는 함수
+		-->
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert> 
+	
 </mapper>

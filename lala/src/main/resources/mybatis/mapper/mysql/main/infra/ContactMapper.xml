@@ -33,4 +33,29 @@
 		AND seq=#{seq}
 	</select>
 	
+	<insert id="insert">
+		INSERT INTO contact
+		(
+		    favorite,
+		    lastName,
+		    firstName,
+		    id,
+		    nickname,
+		    memo
+		)
+		VALUES
+		(
+			#{favorite},
+		    #{lastName},
+		    #{firstName},
+		    #{id},
+		    #{nickname},
+		    #{memo}
+		)
+		
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
 </mapper>

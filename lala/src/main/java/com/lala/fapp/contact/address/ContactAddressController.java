@@ -25,4 +25,16 @@ public class ContactAddressController {
 		return "contact/address/contactAddressXdmItem";
 	}
 	
+	@RequestMapping(value = "/contact/address/contactAddressXdmForm")
+	public String contactAddressXdmForm() {
+		return "contact/address/contactAddressXdmForm";
+	}
+	
+	@RequestMapping(value = "/contact/address/contactAddressXdmInst")
+	public String contactAddressXdmInst(ContactAddressDto contactAddressDto) {
+		contactAddressService.insert(contactAddressDto);
+		
+		return "redirect:/contact/address/contactAddressXdmList";
+	}
+	
 }

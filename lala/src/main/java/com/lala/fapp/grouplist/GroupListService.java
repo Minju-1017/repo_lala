@@ -40,4 +40,9 @@ public class GroupListService { // 로직을 정의 하는 부분
 	public GroupListDto selectOne(GroupListDto groupListDto) {
 		return groupListDao.selectOne(groupListDto);
 	}
+	
+	// 데이터 1개 추가 (몇 번의 update/insert/delete 했는지를 return)
+	public int insert(GroupListDto groupListDto) {
+		return groupListDao.insert(groupListDto);
+	}
 }

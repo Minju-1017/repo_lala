@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+	
+	<form action="/contact/address/contactAddressXdmInst" method="post" id="form">
+		main: <input id="main" name="main"><br/>
+		type: <input id="type" name="type"><br/>
+		zipcode: <input id="zipcode" name="zipcode"><br/>
+		address: <input id="address" name="address"><br/>
+		contact_seq: <input id="contact_seq" name="contact_seq"><br/>
+		<button type="button" id="saveBtn">저장</button>
+	</form>
+	
+	<script type="text/javascript">
+		document.getElementById("saveBtn").onclick = function() {
+			document.getElementById("form").submit();
+		}
+	</script>
+	
+</body>
+</html>
