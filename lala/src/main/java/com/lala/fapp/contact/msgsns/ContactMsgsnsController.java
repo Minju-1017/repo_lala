@@ -25,4 +25,15 @@ public class ContactMsgsnsController {
 		return "contact/msgsns/contactMsgsnsXdmItem";
 	}
 	
+	@RequestMapping(value = "/contact/msgsns/contactMsgsnsXdmForm")
+	public String contactMsgsnsXdmForm() {
+		return "contact/msgsns/contactMsgsnsXdmForm";
+	}
+	
+	@RequestMapping(value = "/contact/msgsns/contactMsgsnsXdmInst")
+	public String contactMsgsnsXdmInst(ContactMsgsnsDto contactMsgsnsDto) {
+		contactMsgsnsService.insert(contactMsgsnsDto);
+		return "redirect:/contact/msgsns/contactMsgsnsXdmList";
+	}
+	
 }

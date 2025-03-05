@@ -17,4 +17,8 @@ public class ContactPhoneService {
 	public ContactPhoneDto selectOne(ContactPhoneDto contactPhoneDto) {
 		return contactPhoneDao.selectOne(contactPhoneDto);
 	}
+	
+	public int insert(ContactPhoneDto contactPhoneDto) {
+		return contactPhoneDao.insert(contactPhoneDto);
+	}
 }

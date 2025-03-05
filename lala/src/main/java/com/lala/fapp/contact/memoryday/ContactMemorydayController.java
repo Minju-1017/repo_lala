@@ -25,4 +25,15 @@ public class ContactMemorydayController {
 		return "contact/memoryday/contactMemorydayXdmItem";
 	}
 	
+	@RequestMapping(value = "/contact/memoryday/contactMemorydayXdmForm")
+	public String contactMemorydayXdmForm() {
+		return "contact/memoryday/contactMemorydayXdmForm";
+	}
+	
+	@RequestMapping(value = "/contact/memoryday/contactMemorydayXdmInst")
+	public String contactMemorydayXdmInst(ContactMemorydayDto contactMemorydayDto) {
+		contactMemorydayService.insert(contactMemorydayDto);
+		return "redirect:/contact/memoryday/contactMemorydayXdmList";
+	}
+	
 }

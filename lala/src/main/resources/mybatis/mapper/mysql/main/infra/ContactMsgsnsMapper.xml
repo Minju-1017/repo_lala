@@ -28,4 +28,21 @@
 		AND seq=#{seq}
 	</select>
 	
+	<insert id="insert">
+		INSERT INTO contact_msgsns
+		(
+			main,
+		    type,
+		    address,
+		    contact_seq
+		)
+		VALUES
+		(
+			#{main},
+		    #{type},
+		    #{address},
+		    #{contact_seq}
+		)
+	</insert>
+	
 </mapper>

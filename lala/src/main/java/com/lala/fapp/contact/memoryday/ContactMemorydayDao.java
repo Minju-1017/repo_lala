@@ -9,5 +9,6 @@ public interface ContactMemorydayDao {
 	
 	public List<ContactMemorydayDto> selectList(); 
 	public ContactMemorydayDto selectOne(ContactMemorydayDto contactMemorydayDto); 
+	public int insert(ContactMemorydayDto contactMemorydayDto);
 	
 }

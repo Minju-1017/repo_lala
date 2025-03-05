@@ -41,7 +41,11 @@ public class ContactMemorydayDto {
 		this.date = date;
 	}
 	
-	public String getSolar() {
+	public int getSolar() {
+		return solar;
+	}
+	
+	public String getSolarStr() {
 		return solar == 1 ? "양력" : "음력";
 	}
 	

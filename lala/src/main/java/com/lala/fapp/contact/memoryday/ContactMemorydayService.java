@@ -17,4 +17,8 @@ public class ContactMemorydayService {
 	public ContactMemorydayDto selectOne(ContactMemorydayDto contactMemorydayDto) {
 		return contactMemorydayDao.selectOne(contactMemorydayDto);
 	}
+	
+	public int insert(ContactMemorydayDto contactMemorydayDto) {
+		return contactMemorydayDao.insert(contactMemorydayDto);
+	}
 }

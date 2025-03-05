@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+	
+	<form action="/contact/memoryday/contactMemorydayXdmInst" method="post" id="form">
+		main: <input id="main" name="main"><br/>
+	    type: <input id="type" name="type"><br/>
+	    date: <input id="date" name="date"><br/>
+	    solar: <input id="solar" name="solar"><br/>
+	    contact_seq: <input id="contact_seq" name="contact_seq"><br/>
+	    <button type="button" id="btnSave">저장</button>
+	</form>
+	
+	<script type="text/javascript">
+		document.getElementById("btnSave").onclick = function() {
+			document.getElementById("form").submit();
+		}
+	</script>
+	
+</body>
+</html>

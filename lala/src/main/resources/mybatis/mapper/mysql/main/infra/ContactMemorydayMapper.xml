@@ -28,4 +28,23 @@
 		AND seq=#{seq}
 	</select>
 	
+	<insert id="insert">
+		INSERT INTO contact_memoryday
+		(
+			main,
+		    type,
+		    date,
+		    solar,
+		    contact_seq
+		)
+		VALUES
+		(
+			#{main},
+		    #{type},
+		    #{date},
+		    #{solar},
+		    #{contact_seq}
+		)
+	</insert>
+	
 </mapper>

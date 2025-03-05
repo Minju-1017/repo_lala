@@ -27,4 +27,21 @@
 		AND seq=#{seq}
 	</select>
 	
+	<insert id="insert">
+		INSERT INTO contact_phone
+		(
+			main,
+		    type,
+		    number,
+		    contact_seq
+		)
+		VALUES
+		(
+			#{main},
+		    #{type},
+		    #{number},
+		    #{contact_seq}
+		)
+	</insert>
+	
 </mapper>

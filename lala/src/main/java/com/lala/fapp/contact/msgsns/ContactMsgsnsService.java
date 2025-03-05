@@ -17,4 +17,8 @@ public class ContactMsgsnsService {
 	public ContactMsgsnsDto selectOne(ContactMsgsnsDto contactMsgsnsDto) {
 		return contactMsgsnsDao.selectOne(contactMsgsnsDto);
 	}
+	
+	public int insert(ContactMsgsnsDto contactMsgsnsDto) {
+		return contactMsgsnsDao.insert(contactMsgsnsDto);
+	}
 }

@@ -9,5 +9,6 @@ public interface ContactPhoneDao {
 	
 	public List<ContactPhoneDto> selectList(); 
 	public ContactPhoneDto selectOne(ContactPhoneDto contactPhoneDto); 
+	public int insert(ContactPhoneDto contactPhoneDto);
 	
 }

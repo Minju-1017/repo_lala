@@ -11,7 +11,7 @@ public class ContactPhoneController {
 	@Autowired
 	ContactPhoneService contactPhoneService;
 	
-	@RequestMapping(value = "/contact/Ppone/contactPhoneXdmList")
+	@RequestMapping(value = "/contact/Phone/contactPhoneXdmList")
 	public String contactPhoneXdmList(Model model) {
 		model.addAttribute("contactPhone", contactPhoneService.selectList());
 		
@@ -23,6 +23,17 @@ public class ContactPhoneController {
 		model.addAttribute("contactPhoneItem", contactPhoneService.selectOne(contactPhoneDto));
 		
 		return "contact/phone/contactPhoneXdmItem";
+	}
+	
+	@RequestMapping(value = "/contact/phone/contactPhoneXdmForm")
+	public String contactPhoneXdmForm() {
+		return "contact/phone/contactPhoneXdmForm";
+	}
+	
+	@RequestMapping(value = "/contact/phone/contactPhoneXdmInst")
+	public String contactPhoneXdmInst(ContactPhoneDto contactPhoneDto) {
+		contactPhoneService.insert(contactPhoneDto);
+		return "redirect:/contact/Phone/contactPhoneXdmList";
 	}
 	
 }
