@@ -36,4 +36,18 @@ public class ContactMsgsnsController {
 		return "redirect:/contact/msgsns/contactMsgsnsXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/msgsns/contactMsgsnsXdmMfom")
+	public String contactMsgsnsXdmForm(Model model, ContactMsgsnsDto contactMsgsnsDto) {
+		model.addAttribute("contactMsgsnsItem", contactMsgsnsService.selectOne(contactMsgsnsDto));
+		
+		return "contact/msgsns/contactMsgsnsXdmMfom";
+	}
+	
+	@RequestMapping(value = "/contact/msgsns/contactMsgsnsXdmUpdt")
+	public String contactMsgsnsXdmUpdt(ContactMsgsnsDto contactMsgsnsDto) {
+		contactMsgsnsService.update(contactMsgsnsDto);
+		
+		return "redirect:/contact/msgsns/contactMsgsnsXdmList";
+	}
+	
 }

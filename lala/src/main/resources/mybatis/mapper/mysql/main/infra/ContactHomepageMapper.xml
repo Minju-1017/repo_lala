@@ -18,7 +18,9 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			seq,
-		    url
+		    main,
+		    url,
+		    contact_seq
 		FROM
 			contact_homepage
 		WHERE 1=1
@@ -39,5 +41,14 @@
 		    #{contact_seq}
 		)
 	</insert>
+	
+	<update id="update">
+		UPDATE contact_homepage
+		SET
+			main=#{main},
+		    url=#{url}
+		WHERE
+			seq=#{seq}
+	</update>
 	
 </mapper>

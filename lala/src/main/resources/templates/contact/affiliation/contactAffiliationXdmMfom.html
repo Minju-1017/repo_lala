@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+	
+	<form action="/contact/affiliation/contactAffiliationXdmUpdt" method="post" id="form">
+		<input type="hidden" name="seq" th:value="${contactAffiliationItem?.seq}" />
+		<input type="hidden" name="contact_seq" th:value="${contactAffiliationItem?.contact_seq}" />
+		
+		seq: <input id="seq" name="seq" disabled 
+				th:value="${contactAffiliationItem?.seq}" /><br/>
+		main: <input id="main" name="main" th:value="${contactAffiliationItem?.main}" /><br/>
+	    company: <input id="company" name="company" th:value="${contactAffiliationItem?.company}" /><br/>
+	    department: <input id="department" name="department" 
+	    		th:value="${contactAffiliationItem?.department}" /><br/>
+	    position: <input id="position" name="position" 
+	    		th:value="${contactAffiliationItem?.position}" /><br/>
+	    contact_seq: <input id="contact_seq" name="contact_seq" disabled 
+	    		th:value="${contactAffiliationItem?.contact_seq}" /><br/>
+	    <button type="button" id="btnSave">저장</button>
+	</form>
+	
+	<script type="text/javascript">
+		document.getElementById("btnSave").onclick = function() {
+			document.getElementById("form").submit();
+		}
+	</script>
+	
+</body>
+</html>

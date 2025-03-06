@@ -64,7 +64,7 @@ public class GroupListController {
 	}
 	
 	/**
-	 * 입력한 데이터 저장하기
+	 * 입력한 데이터 추가하기
 	 * @return redirect: 데이터 저장 후 돌아갈 주소(List)
 	 */
 	@RequestMapping(value = "/grouplist/groupListXdmInst")
@@ -80,6 +80,30 @@ public class GroupListController {
 		System.out.println("groupListDto.getSeq(): " + groupListDto.getSeq()); 	
 		
 		return "redirect:/grouplist/groupListXdmList";
+	}
+	
+	/**
+	 * 데이터 수정 폼
+	 * 데이터 1개 읽어와서 화면에 보여주기
+	 * @return
+	 */
+	@RequestMapping(value = "/grouplist/groupListXdmMfom")
+	public String groupListXdmMfom(Model model, GroupListDto groupListDto) {		
+		model.addAttribute("groupListItem", groupListService.selectOne(groupListDto));
+		
+		return "grouplist/groupListXdmMfom";
+	}
+	
+	/**
+	 * 입력한 데이터 수정하기
+	 * @return redirect: 데이터 저장 후 돌아갈 주소(List)
+	 */
+	@RequestMapping(value = "/grouplist/groupListXdmUpdt")
+	public String groupListXdmUpdt(GroupListDto groupListDto) {
+		groupListService.update(groupListDto);	
+
+		// item으로 보내려면 검색 단계가 하나 더 들어가야 하므로 일단 List로 보내기.
+		return "redirect:/grouplist/groupListXdmList"; 
 	}
 	
 }

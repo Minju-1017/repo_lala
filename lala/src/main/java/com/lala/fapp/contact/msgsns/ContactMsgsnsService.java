@@ -21,4 +21,8 @@ public class ContactMsgsnsService {
 	public int insert(ContactMsgsnsDto contactMsgsnsDto) {
 		return contactMsgsnsDao.insert(contactMsgsnsDto);
 	}
+	
+	public int update(ContactMsgsnsDto contactMsgsnsDto) {
+		return contactMsgsnsDao.update(contactMsgsnsDto);
+	}
 }

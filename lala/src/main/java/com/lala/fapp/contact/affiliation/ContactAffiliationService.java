@@ -21,4 +21,8 @@ public class ContactAffiliationService {
 	public int insert(ContactAffiliationDto contactAffiliationDto) {
 		return contactAffiliationDao.insert(contactAffiliationDto);
 	}
+	
+	public int update(ContactAffiliationDto contactAffiliationDto) {
+		return contactAffiliationDao.update(contactAffiliationDto);
+	}
 }

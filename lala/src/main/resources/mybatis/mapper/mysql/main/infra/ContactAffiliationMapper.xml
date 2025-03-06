@@ -20,7 +20,11 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			seq,
-		    position
+		    main,
+		    company,
+		    department,
+		    position,
+		    contact_seq
 		FROM
 			contact_affiliation
 		WHERE 1=1
@@ -45,5 +49,16 @@
 		    #{contact_seq}
 		)
 	</insert>
+	
+	<update id="update">
+		UPDATE contact_affiliation
+		SET
+			main=#{main},
+		    company=#{company},
+		    department=#{department},
+		    position=#{position}
+		WHERE
+			seq=#{seq}
+	</update>
 	
 </mapper>

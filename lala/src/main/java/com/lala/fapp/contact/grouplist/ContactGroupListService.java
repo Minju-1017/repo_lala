@@ -21,4 +21,8 @@ public class ContactGroupListService {
 	public int insert(ContactGroupListDto contactGroupListDto) {
 		return contactGroupListDao.insert(contactGroupListDto);
 	}
+	
+	public int update(ContactGroupListDto contactGroupListDto) {
+		return contactGroupListDao.update(contactGroupListDto);
+	}
 }

@@ -21,4 +21,8 @@ public class ContactHomepageService {
 	public int insert(ContactHomepageDto contactHomepageDto) {
 		return contactHomepageDao.insert(contactHomepageDto);
 	}
+	
+	public int update(ContactHomepageDto contactHomepageDto) {
+		return contactHomepageDao.update(contactHomepageDto);
+	}
 }

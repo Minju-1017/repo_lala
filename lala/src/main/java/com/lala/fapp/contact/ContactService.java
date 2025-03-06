@@ -20,4 +20,8 @@ public class ContactService {
 	public int insert(ContactDto contactDto) {
 		return contactDao.insert(contactDto);
 	}
+	
+	public int update(ContactDto contactDto) {
+		return contactDao.update(contactDto);
+	}
 }

@@ -19,8 +19,10 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			seq,
-			type,
-			number
+		    main,
+		    type,
+		    number,
+		    contact_seq
 		FROM
 			contact_phone
 		WHERE 1=1
@@ -43,5 +45,15 @@
 		    #{contact_seq}
 		)
 	</insert>
+	
+	<update id="update">
+		UPDATE contact_phone
+		SET
+			main=#{main},
+		    type=#{type},
+		    number=#{number}
+		WHERE
+			seq=#{seq}
+	</update>
 	
 </mapper>

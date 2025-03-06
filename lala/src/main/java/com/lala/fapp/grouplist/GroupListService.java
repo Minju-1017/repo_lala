@@ -45,4 +45,9 @@ public class GroupListService { // 로직을 정의 하는 부분
 	public int insert(GroupListDto groupListDto) {
 		return groupListDao.insert(groupListDto);
 	}
+	
+	// 데이터 1개 수정 (몇 번의 update/insert/delete 했는지를 return)
+	public int update(GroupListDto groupListDto) {
+		return groupListDao.update(groupListDto);
+	}
 }

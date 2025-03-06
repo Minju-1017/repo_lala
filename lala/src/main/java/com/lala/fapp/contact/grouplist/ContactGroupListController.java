@@ -36,4 +36,20 @@ public class ContactGroupListController {
 		return "redirect:/contact/grouplist/contactGroupListXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/grouplist/contactGroupListXdmMfom")
+	public String contactGroupListXdmMfom(
+			Model model, ContactGroupListDto contactGroupListDto) {
+		model.addAttribute("contactGroupListItem", contactGroupListService.selectOne(contactGroupListDto));
+		
+		return "contact/grouplist/contactGroupListXdmMfom";
+		
+	}
+	
+	@RequestMapping(value = "/contact/grouplist/contactGroupListXdmUpdt")
+	public String contactGroupListXdmUpdt(ContactGroupListDto contactGroupListDto) {
+		contactGroupListService.update(contactGroupListDto);
+		
+		return "redirect:/contact/grouplist/contactGroupListXdmList";
+	}
+	
 }

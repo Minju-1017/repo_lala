@@ -36,4 +36,18 @@ public class ContactEmailController {
 		return "redirect:/contact/email/contactEmailXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/email/contactEmailXdmMfom")
+	public String contactEmailXdmMfom(Model model, ContactEmailDto contactEmailDto) {
+		model.addAttribute("contactEmailItem", contactEmailService.selectOne(contactEmailDto));
+		
+		return "contact/email/contactEmailXdmMfom";
+	}
+	
+	@RequestMapping(value = "/contact/email/contactEmailXdmUpdt")
+	public String contactEmailXdmUpdt(ContactEmailDto contactEmailDto) {
+		contactEmailService.update(contactEmailDto);
+		
+		return "redirect:/contact/email/contactEmailXdmList";
+	}
+	
 }

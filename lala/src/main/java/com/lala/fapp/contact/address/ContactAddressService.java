@@ -21,4 +21,8 @@ public class ContactAddressService {
 	public int insert(ContactAddressDto contactAddressDto) {
 		return contactAddressDao.insert(contactAddressDto);
 	}
+	
+	public int update(ContactAddressDto contactAddressDto) {
+		return contactAddressDao.update(contactAddressDto);
+	}
 }

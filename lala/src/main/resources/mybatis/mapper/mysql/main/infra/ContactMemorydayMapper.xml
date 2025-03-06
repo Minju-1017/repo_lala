@@ -20,8 +20,11 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			seq,
+		    main,
+		    type,
 		    date,
-		    solar
+		    solar,
+		    contact_seq
 		FROM
 			contact_memoryday
 		WHERE 1=1
@@ -46,5 +49,16 @@
 		    #{contact_seq}
 		)
 	</insert>
+	
+	<update id="update">
+		UPDATE contact_memoryday
+		SET
+			main=#{main},
+		    type=#{type},
+		    date=#{date},
+		    solar=#{solar}
+		WHERE
+			seq=#{seq}
+	</update>
 	
 </mapper>

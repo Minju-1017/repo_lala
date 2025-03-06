@@ -63,4 +63,12 @@
 		</selectKey>
 	</insert> 
 	
+	<update id="update"> <!-- resultMap은 없어도 된다. return 할 것이 없으므로 -->
+		UPDATE grouplist
+		SET
+			groupName=#{groupName}
+		WHERE
+			seq=#{seq}
+	</update>
+	
 </mapper>

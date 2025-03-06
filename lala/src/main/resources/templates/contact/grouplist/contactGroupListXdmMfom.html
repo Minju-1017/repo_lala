@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+	
+	<form action="/contact/grouplist/contactGroupListXdmUpdt" id="form" method="post">
+		<input type="hidden" name="seq" th:value="${contactGroupListItem?.seq}" />
+		<input type="hidden" name="contact_seq" th:value="${contactGroupListItem?.contact_seq}" />
+		
+		seq: <input id="seq" name="seq" disabled th:value="${contactGroupListItem?.seq}" /><br/>
+		main: <input id="main" name="main" th:value="${contactGroupListItem?.main}" /><br/>
+	    contact_seq: <input id="contact_seq" name="contact_seq" disabled 
+	    		th:value="${contactGroupListItem?.contact_seq}" /><br/>
+	    grouplist_seq: <input id="grouplist_seq" name="grouplist_seq" 
+	    		th:value="${contactGroupListItem?.grouplist_seq}" /><br/>
+	    
+	    <button type="button" id="btnSave">저장</button>
+	</form>
+	
+	<script type="text/javascript">
+		document.getElementById("btnSave").onclick = function() {
+			document.getElementById("form").submit();
+		}
+	</script>
+</body>
+</html>

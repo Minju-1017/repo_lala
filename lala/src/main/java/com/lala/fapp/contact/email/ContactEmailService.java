@@ -21,4 +21,8 @@ public class ContactEmailService {
 	public int insert(ContactEmailDto contactEmailDto) {
 		return contactEmailDao.insert(contactEmailDto);
 	}
+	
+	public int update(ContactEmailDto contactEmailDto) {
+		return contactEmailDao.update(contactEmailDto);
+	}
 }

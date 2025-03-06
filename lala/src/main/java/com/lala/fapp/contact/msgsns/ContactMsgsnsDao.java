@@ -10,5 +10,6 @@ public interface ContactMsgsnsDao {
 	public List<ContactMsgsnsDto> selectList(); 
 	public ContactMsgsnsDto selectOne(ContactMsgsnsDto contactMsgsnsDto); 
 	public int insert(ContactMsgsnsDto contactMsgsnsDto);
+	public int update(ContactMsgsnsDto contactMsgsnsDto);
 	
 }

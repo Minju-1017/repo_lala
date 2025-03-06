@@ -36,4 +36,19 @@ public class ContactAffiliationController {
 		return "redirect:/contact/affiliation/contactAffiliationXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/affiliation/contactAffiliationXdmMfom")
+	public String contactAffiliationXdmMfom(
+			Model model, ContactAffiliationDto contactAffiliationDto) {
+		model.addAttribute("contactAffiliationItem", 
+				contactAffiliationService.selectOne(contactAffiliationDto));
+		return "contact/affiliation/contactAffiliationXdmMfom";
+	}
+	
+	@RequestMapping(value = "/contact/affiliation/contactAffiliationXdmUpdt")
+	public String contactAffiliationXdmUpdt(ContactAffiliationDto contactAffiliationDto) {
+		contactAffiliationService.update(contactAffiliationDto);
+		
+		return "redirect:/contact/affiliation/contactAffiliationXdmList";
+	}
+	
 }

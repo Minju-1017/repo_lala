@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+
+	<form action="/contact/contactXdmUpdt" id="form" method="post">
+		<input type="hidden" name="seq" th:value="${contactItem?.seq}" />
+		<input type="hidden" name="id" th:value="${contactItem?.id}" />
+		
+		seq: <input type="text" id="seq" name="seq" disabled th:value="${contactItem?.seq}" /><br>
+	    favorite: <input type="text" id="favorite" name="favorite" th:value="${contactItem?.favorite}" /><br>
+	    lastName: <input type="text" id="lastName" name="lastName" th:value="${contactItem?.lastName}" /><br>
+	    firstName: <input type="text" id="firstName" name="firstName" th:value="${contactItem?.firstName}" /><br>
+	    id: <input type="text" id="id" name="id" disabled th:value="${contactItem?.id}" /><br>
+	    nickname: <input type="text" id="nickname" name="nickname" th:value="${contactItem?.nickname}" /><br>
+	    memo: <input type="text" id="memo" name="memo"  th:value="${contactItem?.memo}" /><br>
+	    
+	    <button type="button" id="btnSave">저장</button>
+	</form>
+	
+	<script type="text/javascript">
+		document.getElementById("btnSave").onclick = function() {
+			document.getElementById("form").submit();
+		}
+	</script>
+</body>
+</html>

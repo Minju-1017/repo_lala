@@ -36,4 +36,17 @@ public class ContactMemorydayController {
 		return "redirect:/contact/memoryday/contactMemorydayXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/memoryday/contactMemorydayXdmMfom")
+	public String contactMemorydayXdmMfom(Model model, ContactMemorydayDto contactMemorydayDto) {
+		model.addAttribute("contactMemorydayItem", contactMemorydayService.selectOne(contactMemorydayDto));
+		
+		return "contact/memoryday/contactMemorydayXdmMfom";
+	}
+	
+	@RequestMapping(value = "/contact/memoryday/contactMemorydayXdmUpdt")
+	public String contactMemorydayXdmUpdt(ContactMemorydayDto contactMemorydayDto) {
+		contactMemorydayService.update(contactMemorydayDto);
+		return "redirect:/contact/memoryday/contactMemorydayXdmList";
+	}
+	
 }

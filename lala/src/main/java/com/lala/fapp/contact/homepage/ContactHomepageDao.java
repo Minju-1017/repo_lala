@@ -10,5 +10,6 @@ public interface ContactHomepageDao {
 	public List<ContactHomepageDto> selectList(); 
 	public ContactHomepageDto selectOne(ContactHomepageDto contactHomepageDto); 
 	public int insert(ContactHomepageDto contactHomepageDto); 
+	public int update(ContactHomepageDto contactHomepageDto); 
 	
 }

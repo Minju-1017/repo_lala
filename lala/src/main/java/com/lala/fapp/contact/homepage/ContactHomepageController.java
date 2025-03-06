@@ -33,6 +33,21 @@ public class ContactHomepageController {
 	@RequestMapping(value = "/contact/homepage/contactHomepageXdmInst")
 	public String contactHomepageXdmInst(ContactHomepageDto contactHomepageDto) {
 		contactHomepageService.insert(contactHomepageDto);
+		
+		return "redirect:/contact/homepage/contactHomepageXdmList";
+	}
+	
+	@RequestMapping(value = "/contact/homepage/contactHomepageXdmMfom")
+	public String contactHomepageXdmMfom(Model model, ContactHomepageDto contactHomepageDto) {
+		model.addAttribute("contactHomepageItem", contactHomepageService.selectOne(contactHomepageDto));
+		
+		return "contact/homepage/contactHomepageXdmMfom";
+	}
+	
+	@RequestMapping(value = "/contact/homepage/contactHomepageXdmUpdt")
+	public String contactHomepageXdmUpdt(ContactHomepageDto contactHomepageDto) {
+		contactHomepageService.update(contactHomepageDto);
+		
 		return "redirect:/contact/homepage/contactHomepageXdmList";
 	}
 	

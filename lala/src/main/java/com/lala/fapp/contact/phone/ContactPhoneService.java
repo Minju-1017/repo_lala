@@ -21,4 +21,8 @@ public class ContactPhoneService {
 	public int insert(ContactPhoneDto contactPhoneDto) {
 		return contactPhoneDao.insert(contactPhoneDto);
 	}
+	
+	public int update(ContactPhoneDto contactPhoneDto) {
+		return contactPhoneDao.update(contactPhoneDto);
+	}
 }

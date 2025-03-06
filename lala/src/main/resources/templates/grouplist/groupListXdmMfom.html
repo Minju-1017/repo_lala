@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<!-- 
+	데이터 수정하기
+	
+	html - js - Controller
+ -->
+
+	<!-- 
+		* th:value=${groupListItem?.seq}
+		  value는 태그의 속성
+		  변수명 뒤 ?는 null 이어도 에러 처리 하지 않겠다는 의미
+	 -->
+	<form action="/grouplist/groupListXdmUpdt" method="post" id="form">
+		<!-- disabled 된 데이터는 submit 시 데이터가 null 처리되므로, hidden을 사용한다. -->
+		<input type="hidden" name="seq" th:value="${groupListItem?.seq}" />
+		
+		seq: <input type="text" name="seq" id="seq" maxlength="10" disabled
+				 th:value="${groupListItem?.seq}" />
+		groupName: <input type="text" name="groupName" id="groupName" 
+					placeholder="그룹 이름을 입력하세요." th:value="${groupListItem?.groupName}" />
+					
+		<button type="button" id="btnSave">저장</button>
+	</form>
+	
+	
+	<script type="text/javascript">
+		document.getElementById("btnSave").onclick = function() {
+			document.getElementById("form").submit();
+		}
+	</script>
+	
+</body>
+</html>

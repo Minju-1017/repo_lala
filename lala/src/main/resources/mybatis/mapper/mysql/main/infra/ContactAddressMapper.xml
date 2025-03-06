@@ -22,7 +22,11 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			seq,
-		    address
+		    main,
+		    type,
+		    zipcode,
+		    address,
+		    contact_seq
 		FROM
 			contact_address
 		WHERE 1=1
@@ -47,5 +51,16 @@
 		    #{contact_seq}
 		)
 	</insert>
+	
+	<update id="update">
+		UPDATE contact_address
+		SET
+			main=#{main},
+		    type=#{type},
+		    zipcode=#{zipcode},
+		    address=#{address}
+		WHERE
+			seq=#{seq}
+	</update>
 	
 </mapper>

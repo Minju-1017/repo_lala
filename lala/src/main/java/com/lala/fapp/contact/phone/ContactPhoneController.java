@@ -36,4 +36,17 @@ public class ContactPhoneController {
 		return "redirect:/contact/Phone/contactPhoneXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/phone/contactPhoneXdmMfom")
+	public String contactPhoneXdmMfom(Model model, ContactPhoneDto contactPhoneDto) {
+		model.addAttribute("contactPhoneItem", contactPhoneService.selectOne(contactPhoneDto));
+		
+		return "contact/phone/contactPhoneXdmMfom";
+	}
+	
+	@RequestMapping(value = "/contact/phone/contactPhoneXdmUpdt")
+	public String contactPhoneXdmUpdt(ContactPhoneDto contactPhoneDto) {
+		contactPhoneService.update(contactPhoneDto);
+		return "redirect:/contact/Phone/contactPhoneXdmList";
+	}
+	
 }

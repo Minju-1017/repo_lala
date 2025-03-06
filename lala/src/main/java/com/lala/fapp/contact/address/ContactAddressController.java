@@ -37,4 +37,18 @@ public class ContactAddressController {
 		return "redirect:/contact/address/contactAddressXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/address/contactAddressXdmMfom")
+	public String contactAddressXdmMfom(Model model, ContactAddressDto contactAddressDto) {
+		model.addAttribute("contactAddressItem", contactAddressService.selectOne(contactAddressDto));
+		
+		return "contact/address/contactAddressXdmMfom";
+	}
+	
+	@RequestMapping(value = "/contact/address/contactAddressXdmUpdt")
+	public String contactAddressXdmUpdt(ContactAddressDto contactAddressDto) {
+		contactAddressService.update(contactAddressDto);
+		
+		return "redirect:/contact/address/contactAddressXdmList";
+	}
+	
 }

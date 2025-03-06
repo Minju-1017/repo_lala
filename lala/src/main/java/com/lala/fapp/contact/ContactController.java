@@ -45,4 +45,25 @@ public class ContactController {
 		return "redirect:/contact/contactXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/contactXdmMfom")
+	public String contactXdmMfom(Model model, ContactDto contactDto) {
+		System.out.println("contactDto.getSeq(): " + contactDto.getSeq()); 
+		System.out.println("contactDto.getLastName(): " + contactDto.getLastName());
+		System.out.println("contactDto.getFirstName(): " + contactDto.getFirstName());
+		System.out.println("contactDto.getId(): " + contactDto.getId());
+		System.out.println("contactDto.getNickname(): " + contactDto.getNickname());
+		System.out.println("contactDto.getMemo(): " + contactDto.getMemo());
+		
+		model.addAttribute("contactItem", contactService.selectOne(contactDto));
+		
+		return "contact/contactXdmMfom";
+	}
+	
+	@RequestMapping(value = "/contact/contactXdmUpdt")
+	public String contactXdmUpdt(ContactDto contactDto) {
+		contactService.update(contactDto);
+		
+		return "redirect:/contact/contactXdmList";
+	}
+	
 }

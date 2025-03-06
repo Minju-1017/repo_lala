@@ -18,7 +18,9 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			seq,
-		    main
+		    main,
+		    contact_seq,
+		    grouplist_seq
 		FROM
 			contact_grouplist
 		WHERE 1=1
@@ -39,5 +41,14 @@
 		    #{grouplist_seq}
 		)
 	</insert>
+	
+	<update id="update">
+		UPDATE contact_grouplist
+		SET
+			main=#{main},
+		    grouplist_seq=#{grouplist_seq}
+		WHERE
+			seq=#{seq}
+	</update>
 	
 </mapper>

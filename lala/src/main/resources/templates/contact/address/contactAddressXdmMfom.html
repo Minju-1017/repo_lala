@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+	
+	<form action="/contact/address/contactAddressXdmUpdt" method="post" id="form">
+		<input type="hidden" name="seq" th:value="${contactAddressItem?.seq}" />
+		<input type="hidden" name="contact_seq" th:value="${contactAddressItem?.contact_seq}" />	
+	
+		seq: <input id="seq" name="seq" disabled th:value="${contactAddressItem?.seq}" /><br/>
+		main: <input id="main" name="main" th:value="${contactAddressItem?.main}" /><br/>
+		type: <input id="type" name="type" th:value="${contactAddressItem?.type}" /><br/>
+		zipcode: <input id="zipcode" name="zipcode" th:value="${contactAddressItem?.zipcode}" /><br/>
+		address: <input id="address" name="address" th:value="${contactAddressItem?.address}" /><br/>
+		contact_seq: <input id="contact_seq" name="contact_seq" disabled th:value="${contactAddressItem?.contact_seq}" /><br/>
+		
+		<button type="button" id="saveBtn">저장</button>
+	</form>
+	
+	<script type="text/javascript">
+		document.getElementById("saveBtn").onclick = function() {
+			document.getElementById("form").submit();
+		}
+	</script>
+	
+</body>
+</html>

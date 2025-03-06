@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+	
+	<form action="/contact/memoryday/contactMemorydayXdmUpdt" method="post" id="form">
+		<input type="hidden" name="seq" th:value="${contactMemorydayItem?.seq}" />
+		<input type="hidden" name="contact_seq" th:value="${contactMemorydayItem?.contact_seq}" />
+		
+		seq: <input id="seq" name="seq" disabled th:value="${contactMemorydayItem?.seq}" /><br/>
+		main: <input id="main" name="main" th:value="${contactMemorydayItem?.main}" /><br/>
+	    type: <input id="type" name="type" th:value="${contactMemorydayItem?.type}" /><br/>
+	    date: <input id="date" name="date" th:value="${contactMemorydayItem?.date}" /><br/>
+	    solar: <input id="solar" name="solar" th:value="${contactMemorydayItem?.solar}" /><br/>
+	    contact_seq: <input id="contact_seq" name="contact_seq" disabled 
+	    		th:value="${contactMemorydayItem?.contact_seq}" /><br/>
+	    <button type="button" id="btnSave">저장</button>
+	</form>
+	
+	<script type="text/javascript">
+		document.getElementById("btnSave").onclick = function() {
+			document.getElementById("form").submit();
+		}
+	</script>
+	
+</body>
+</html>

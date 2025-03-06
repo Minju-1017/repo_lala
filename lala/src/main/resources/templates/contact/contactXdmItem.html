@@ -14,5 +14,9 @@
 			<td th:text="${contactItem.nickname}"></td>
 		</tr>
 	</table>
+	
+	<a href="/contact/contactXdmList">목록</a>
+	<a th:href="@{/contact/contactXdmMfom(seq=${contactItem.seq})}">수정</a>
+	<a href="">삭제</a>
 </body>
 </html>

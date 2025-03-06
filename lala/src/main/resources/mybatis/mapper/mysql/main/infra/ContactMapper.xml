@@ -26,7 +26,16 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			seq,
-		    nickname
+		    profileFilename,
+		    favorite,
+		    honorific,
+		    lastName,
+		    middleName,
+		    firstName,
+		    appellation,
+		    id,
+		    nickname,
+		    memo
 		FROM
 			contact
 		WHERE 1=1
@@ -57,5 +66,17 @@
 			SELECT last_insert_id()
 		</selectKey>
 	</insert>
+	
+	<update id="update">
+		UPDATE contact
+		SET
+			favorite=#{favorite},
+		    lastName=#{lastName},
+		    firstName=#{firstName},
+		    nickname=#{nickname},
+		    memo=#{memo}
+		WHERE
+			seq=#{seq}
+	</update>
 	
 </mapper>
