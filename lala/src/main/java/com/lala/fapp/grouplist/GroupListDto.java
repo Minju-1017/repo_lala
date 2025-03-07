@@ -8,6 +8,7 @@ public class GroupListDto {
 	
 	private String seq; // seq는 예외로 int형으로 DB에 저장되어 있지만, 편의를 위해 String으로 선언한다.
 	private String groupName;
+	private int isDel;
 
 	public String getSeq() {
 		return seq;
@@ -24,4 +25,13 @@ public class GroupListDto {
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
 	}
+
+	public int getIsDel() {
+		return isDel;
+	}
+
+	public void setIsDel(int isDel) {
+		this.isDel = isDel;
+	}
+
 }

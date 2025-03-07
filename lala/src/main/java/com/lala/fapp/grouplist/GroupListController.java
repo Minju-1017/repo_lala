@@ -106,4 +106,28 @@ public class GroupListController {
 		return "redirect:/grouplist/groupListXdmList"; 
 	}
 	
+	/**
+	 * 데이터 삭제하기
+	 * @return redirect: 데이터 삭제 후 돌아갈 주소(List)
+	 */
+	@RequestMapping(value = "/grouplist/groupListXdmDele")
+	public String groupListXdmDele(GroupListDto groupListDto) {
+		groupListService.delete(groupListDto);	
+
+		// item으로 보내려면 검색 단계가 하나 더 들어가야 하므로 일단 List로 보내기.
+		return "redirect:/grouplist/groupListXdmList"; 
+	}
+	
+	/**
+	 * 데이터 삭제 옵션 세팅 - update 이용
+	 * @return redirect: 데이터 저장 후 돌아갈 주소(List)
+	 */
+	@RequestMapping(value = "/grouplist/groupListXdmUele")
+	public String groupListXdmUele(GroupListDto groupListDto) {
+		groupListService.uelete(groupListDto);	
+
+		// item으로 보내려면 검색 단계가 하나 더 들어가야 하므로 일단 List로 보내기.
+		return "redirect:/grouplist/groupListXdmList"; 
+	}
+	
 }

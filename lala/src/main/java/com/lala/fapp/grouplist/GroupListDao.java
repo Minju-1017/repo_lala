@@ -29,4 +29,10 @@ public interface GroupListDao {
 	// 데이터 1개 수정 (몇 번의 update/insert/delete 했는지를 return)
 	public int update(GroupListDto groupListDto);
 	
+	// 데이터 1개 삭제 (몇 번의 update/insert/delete 했는지를 return)
+	public int delete(GroupListDto groupListDto);
+	
+	// 데이터 1개 삭제 값 세팅 - update 이용 (몇 번의 update/insert/delete 했는지를 return)
+	public int uelete(GroupListDto groupListDto);
+	
 }

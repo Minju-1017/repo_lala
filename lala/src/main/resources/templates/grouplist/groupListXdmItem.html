@@ -22,8 +22,24 @@
 	</table>
 	
 	<a href="/grouplist/groupListXdmList">목록</a>
-	<a href="">삭제</a>
+	<a th:href="@{/grouplist/groupListXdmDele(seq=${groupListItem.seq})}" id="delete">삭제</a>
+	<a th:href="@{/grouplist/groupListXdmUele(seq=${groupListItem.seq})}" id="uelete">삭제(업데이트)</a>
 	<a th:href="@{/grouplist/groupListXdmMfom(seq=${groupListItem.seq})}">수정</a>
-
+	
+	<script type="text/javascript">
+		document.getElementById("uelete").onclick = function() {
+			// true일 때는 a 태그의 기능 수행
+			if (!confirm("정말 삭제하시겠습니까?")) {
+				return false;
+			}
+		}
+		
+		document.getElementById("delete").onclick = function() {
+			if (!confirm("정말 삭제하시겠습니까?")) {
+				return false;
+			}
+		}
+	</script>
+	
 </body>
 </html>

@@ -21,6 +21,7 @@
 		FROM
 			grouplist
 		WHERE 1=1
+			AND isDel=0
 		ORDER BY seq DESC
 	</select>
 	
@@ -44,12 +45,14 @@
 		INSERT INTO grouplist
 		(
 			<!-- seq, --> <!-- 자동 증가 값은 입력하지 않는다. -->
-		    groupName
+		    groupName,
+		    isDel
 		)
 		VALUES 
 		(
 			<!-- #{seq}, -->
-		    #{groupName}
+		    #{groupName},
+		    0
 		)
 		
 		<!-- 
@@ -63,10 +66,27 @@
 		</selectKey>
 	</insert> 
 	
+	<!-- 데이터 1개 수정 -->
 	<update id="update"> <!-- resultMap은 없어도 된다. return 할 것이 없으므로 -->
 		UPDATE grouplist
 		SET
 			groupName=#{groupName}
+		WHERE
+			seq=#{seq}
+	</update>
+	
+	<!-- 데이터 1개 삭제 -->
+	<delete id="delete">
+		DELETE FROM grouplist
+		WHERE
+			seq=#{seq}
+	</delete>
+	
+	<!-- 데이터 1개 삭제 값 세팅: 실제 삭제는 하지 않고 DB의 isDel 값만 1로 세팅 -->
+	<update id="uelete">
+		UPDATE grouplist
+		SET
+			isDel=1
 		WHERE
 			seq=#{seq}
 	</update>
