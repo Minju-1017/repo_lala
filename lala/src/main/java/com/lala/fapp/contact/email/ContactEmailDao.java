@@ -11,4 +11,6 @@ public interface ContactEmailDao {
 	public ContactEmailDto selectOne(ContactEmailDto contactEmailDto); 
 	public int insert(ContactEmailDto contactEmailDto); 
 	public int update(ContactEmailDto contactEmailDto); 
+	public int delete(ContactEmailDto contactEmailDto);
+	public int uelete(ContactEmailDto contactEmailDto);
 }

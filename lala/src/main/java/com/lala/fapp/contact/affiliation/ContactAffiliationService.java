@@ -25,4 +25,13 @@ public class ContactAffiliationService {
 	public int update(ContactAffiliationDto contactAffiliationDto) {
 		return contactAffiliationDao.update(contactAffiliationDto);
 	}
+	
+
+	public int delete(ContactAffiliationDto contactAffiliationDto) {
+		return contactAffiliationDao.delete(contactAffiliationDto);
+	}
+	
+	public int uelete(ContactAffiliationDto contactAffiliationDto) {
+		return contactAffiliationDao.uelete(contactAffiliationDto);
+	}
 }

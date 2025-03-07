@@ -16,6 +16,7 @@
 		FROM
 			contact_address
 		WHERE 1=1
+			AND isDel=0
 		ORDER BY seq ASC
 	</select>
 	
@@ -40,6 +41,7 @@
 		    type,
 		    zipcode,
 		    address,
+		    isDel,
 		    contact_seq
 		)
 		VALUES
@@ -48,6 +50,7 @@
 		    #{type},
 		    #{zipcode},
 		    #{address},
+		    0,
 		    #{contact_seq}
 		)
 	</insert>
@@ -59,6 +62,20 @@
 		    type=#{type},
 		    zipcode=#{zipcode},
 		    address=#{address}
+		WHERE
+			seq=#{seq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM contact_address
+		WHERE
+			seq=#{seq}
+	</delete>
+	
+	<update id="uelete">
+		UPDATE contact_address
+		SET
+			isDel=1
 		WHERE
 			seq=#{seq}
 	</update>

@@ -50,4 +50,18 @@ public class ContactEmailController {
 		return "redirect:/contact/email/contactEmailXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/email/contactEmailXdmDele")
+	public String contactEmailXdmDele(ContactEmailDto contactEmailDto) {
+		contactEmailService.delete(contactEmailDto);
+		
+		return "redirect:/contact/email/contactEmailXdmList";
+	}
+	
+	@RequestMapping(value = "/contact/email/contactEmailXdmUele")
+	public String contactEmailXdmUele(ContactEmailDto contactEmailDto) {
+		contactEmailService.uelete(contactEmailDto);
+		
+		return "redirect:/contact/email/contactEmailXdmList";
+	}
+	
 }

@@ -20,6 +20,7 @@
 		FROM
 			contact
 		WHERE 1=1
+			AND isDel=0
 		ORDER BY seq ASC
 	</select>
 	
@@ -50,7 +51,8 @@
 		    firstName,
 		    id,
 		    nickname,
-		    memo
+		    memo,
+		    isDel
 		)
 		VALUES
 		(
@@ -59,7 +61,8 @@
 		    #{firstName},
 		    #{id},
 		    #{nickname},
-		    #{memo}
+		    #{memo},
+		    0
 		)
 		
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
@@ -75,6 +78,20 @@
 		    firstName=#{firstName},
 		    nickname=#{nickname},
 		    memo=#{memo}
+		WHERE
+			seq=#{seq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM contact
+		WHERE
+			seq=#{seq}
+	</delete>
+	
+	<update id="uelete">
+		UPDATE contact
+		SET
+			isDel=1
 		WHERE
 			seq=#{seq}
 	</update>

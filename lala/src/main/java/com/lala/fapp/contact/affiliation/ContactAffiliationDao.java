@@ -11,5 +11,7 @@ public interface ContactAffiliationDao {
 	public ContactAffiliationDto selectOne(ContactAffiliationDto contactAffiliationDto); 
 	public int insert(ContactAffiliationDto contactAffiliationDto);
 	public int update(ContactAffiliationDto contactAffiliationDto);
+	public int delete(ContactAffiliationDto contactAffiliationDto);
+	public int uelete(ContactAffiliationDto contactAffiliationDto);
 	
 }

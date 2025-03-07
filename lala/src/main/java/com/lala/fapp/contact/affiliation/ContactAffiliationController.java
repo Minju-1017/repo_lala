@@ -51,4 +51,16 @@ public class ContactAffiliationController {
 		return "redirect:/contact/affiliation/contactAffiliationXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/affiliation/contactAffiliationXdmDele")
+	public String contactAffiliationXdmDele(ContactAffiliationDto contactAffiliationDto) {
+		contactAffiliationService.delete(contactAffiliationDto);
+		return "redirect:/contact/affiliation/contactAffiliationXdmList";
+	}
+	
+	@RequestMapping(value = "/contact/affiliation/contactAffiliationXdmUele")
+	public String contactAffiliationXdmUele(ContactAffiliationDto contactAffiliationDto) {
+		contactAffiliationService.uelete(contactAffiliationDto);
+		return "redirect:/contact/affiliation/contactAffiliationXdmList";
+	}
+	
 }

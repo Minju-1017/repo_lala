@@ -51,4 +51,18 @@ public class ContactAddressController {
 		return "redirect:/contact/address/contactAddressXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/address/contactAddressXdmDele")
+	public String contactAddressXdmDele(ContactAddressDto contactAddressDto) {
+		contactAddressService.delete(contactAddressDto);
+		
+		return "redirect:/contact/address/contactAddressXdmList";
+	}
+	
+	@RequestMapping(value = "/contact/address/contactAddressXdmUele")
+	public String contactAddressXdmUele(ContactAddressDto contactAddressDto) {
+		contactAddressService.uelete(contactAddressDto);
+		
+		return "redirect:/contact/address/contactAddressXdmList";
+	}
+	
 }

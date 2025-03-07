@@ -25,4 +25,12 @@ public class ContactEmailService {
 	public int update(ContactEmailDto contactEmailDto) {
 		return contactEmailDao.update(contactEmailDto);
 	}
+
+	public int delete(ContactEmailDto contactEmailDto) {
+		return contactEmailDao.delete(contactEmailDto);
+	}
+
+	public int uelete(ContactEmailDto contactEmailDto) {
+		return contactEmailDao.uelete(contactEmailDto);
+	}
 }

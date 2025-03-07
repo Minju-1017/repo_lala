@@ -66,4 +66,18 @@ public class ContactController {
 		return "redirect:/contact/contactXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/contactXdmDele")
+	public String contactXdmDele(ContactDto contactDto) {
+		contactService.delete(contactDto);
+		
+		return "redirect:/contact/contactXdmList";
+	}
+	
+	@RequestMapping(value = "/contact/contactXdmUele")
+	public String contactXdmUele(ContactDto contactDto) {
+		contactService.uelete(contactDto);
+		
+		return "redirect:/contact/contactXdmList";
+	}
+	
 }
