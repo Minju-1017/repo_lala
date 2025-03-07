@@ -49,4 +49,16 @@ public class ContactPhoneController {
 		return "redirect:/contact/Phone/contactPhoneXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/phone/contactPhoneXdmDele")
+	public String contactPhoneXdmDele(ContactPhoneDto contactPhoneDto) {
+		contactPhoneService.delete(contactPhoneDto);
+		return "redirect:/contact/Phone/contactPhoneXdmList";
+	}
+	
+	@RequestMapping(value = "/contact/phone/contactPhoneXdmUele")
+	public String contactPhoneXdmUele(ContactPhoneDto contactPhoneDto) {
+		contactPhoneService.uelete(contactPhoneDto);
+		return "redirect:/contact/Phone/contactPhoneXdmList";
+	}
+	
 }

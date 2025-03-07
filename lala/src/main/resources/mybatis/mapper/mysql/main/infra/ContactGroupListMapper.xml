@@ -13,6 +13,8 @@
 		    grouplist_seq
 		FROM
 			contact_grouplist
+		WHERE 1=1
+			AND isDel=0
 	</select>
 	
 	<select id="selectOne" resultMap="resultMapObj">
@@ -32,13 +34,15 @@
 		(
 			main,
 		    contact_seq,
-		    grouplist_seq
+		    grouplist_seq,
+		    isDel
 		)
 		VALUES
 		(
 			#{main},
 		    #{contact_seq},
-		    #{grouplist_seq}
+		    #{grouplist_seq},
+		    0
 		)
 	</insert>
 	
@@ -47,6 +51,20 @@
 		SET
 			main=#{main},
 		    grouplist_seq=#{grouplist_seq}
+		WHERE
+			seq=#{seq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM contact_grouplist
+		WHERE
+			seq=#{seq}
+	</delete>
+	
+	<update id="uelete">
+		UPDATE contact_grouplist
+		SET
+			isDel=1
 		WHERE
 			seq=#{seq}
 	</update>

@@ -20,7 +20,24 @@
 	
 	<a href="/contact/Phone/contactPhoneXdmList">목록</a>
 	<a th:href="@{/contact/phone/contactPhoneXdmMfom(seq=${contactPhoneItem.seq})}">수정</a>
-	<a href="">삭제</a>
+	<a th:href="@{/contact/phone/contactPhoneXdmDele(seq=${contactPhoneItem.seq})}"
+		id="delete">삭제</a>
+	<a th:href="@{/contact/phone/contactPhoneXdmUele(seq=${contactPhoneItem.seq})}"
+		id="uelete">삭제(업데이트)</a>
+	
+	<script type="text/javascript">
+		document.getElementById("delete").onclick = function() {
+			if (!confirm("정말 삭제하시겠습니까?")) {
+				return false;
+			}
+		}
+		
+		document.getElementById("uelete").onclick = function() {
+			if (!confirm("정말 삭제하시겠습니까?")) {
+				return false;
+			}
+		}
+	</script>
 	
 </body>
 </html>

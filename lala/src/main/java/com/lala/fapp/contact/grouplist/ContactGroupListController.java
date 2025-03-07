@@ -52,4 +52,18 @@ public class ContactGroupListController {
 		return "redirect:/contact/grouplist/contactGroupListXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/grouplist/contactGroupListXdmDele")
+	public String contactGroupListXdmDele(ContactGroupListDto contactGroupListDto) {
+		contactGroupListService.delete(contactGroupListDto);
+		
+		return "redirect:/contact/grouplist/contactGroupListXdmList";
+	}
+	
+	@RequestMapping(value = "/contact/grouplist/contactGroupListXdmUele")
+	public String contactGroupListXdmUele(ContactGroupListDto contactGroupListDto) {
+		contactGroupListService.uelete(contactGroupListDto);
+		
+		return "redirect:/contact/grouplist/contactGroupListXdmList";
+	}
+	
 }

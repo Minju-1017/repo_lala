@@ -11,5 +11,7 @@ public interface ContactGroupListDao {
 	public ContactGroupListDto selectOne(ContactGroupListDto contactGroupListDto); 
 	public int insert(ContactGroupListDto contactGroupListDto); 
 	public int update(ContactGroupListDto contactGroupListDto); 
+	public int delete(ContactGroupListDto contactGroupListDto); 
+	public int uelete(ContactGroupListDto contactGroupListDto); 
 	
 }

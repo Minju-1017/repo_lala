@@ -25,4 +25,12 @@ public class ContactMsgsnsService {
 	public int update(ContactMsgsnsDto contactMsgsnsDto) {
 		return contactMsgsnsDao.update(contactMsgsnsDto);
 	}
+	
+	public int delete(ContactMsgsnsDto contactMsgsnsDto) {
+		return contactMsgsnsDao.delete(contactMsgsnsDto);
+	}
+	
+	public int uelete(ContactMsgsnsDto contactMsgsnsDto) {
+		return contactMsgsnsDao.uelete(contactMsgsnsDto);
+	}
 }

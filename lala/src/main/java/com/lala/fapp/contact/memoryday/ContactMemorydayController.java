@@ -49,4 +49,16 @@ public class ContactMemorydayController {
 		return "redirect:/contact/memoryday/contactMemorydayXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/memoryday/contactMemorydayXdmDele")
+	public String contactMemorydayXdmDele(ContactMemorydayDto contactMemorydayDto) {
+		contactMemorydayService.delete(contactMemorydayDto);
+		return "redirect:/contact/memoryday/contactMemorydayXdmList";
+	}
+	
+	@RequestMapping(value = "/contact/memoryday/contactMemorydayXdmUele")
+	public String contactMemorydayXdmUele(ContactMemorydayDto contactMemorydayDto) {
+		contactMemorydayService.uelete(contactMemorydayDto);
+		return "redirect:/contact/memoryday/contactMemorydayXdmList";
+	}
+	
 }

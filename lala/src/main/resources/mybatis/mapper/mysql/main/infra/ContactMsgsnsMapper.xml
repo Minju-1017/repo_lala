@@ -14,7 +14,8 @@
 		    contact_seq
 		FROM
 			contact_msgsns
-
+		WHERE 1=1
+			AND isDel=0
 	</select>
 	
 	<select id="selectOne" resultMap="resultMapObj">
@@ -36,6 +37,7 @@
 			main,
 		    type,
 		    address,
+		    isDel,
 		    contact_seq
 		)
 		VALUES
@@ -43,6 +45,7 @@
 			#{main},
 		    #{type},
 		    #{address},
+		    0,
 		    #{contact_seq}
 		)
 	</insert>
@@ -55,6 +58,20 @@
 		    address=#{address}
 		WHERE
 			seq=#{seq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM contact_msgsns
+		WHERE 1=1
+			AND seq=#{seq}
+	</delete>
+	
+	<update id="uelete">
+		UPDATE contact_msgsns
+		SET
+		    isDel=1
+		WHERE 1=1
+			AND seq=#{seq}
 	</update>
 	
 </mapper>

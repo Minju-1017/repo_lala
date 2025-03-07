@@ -25,4 +25,13 @@ public class ContactHomepageService {
 	public int update(ContactHomepageDto contactHomepageDto) {
 		return contactHomepageDao.update(contactHomepageDto);
 	}
+	
+
+	public int delete(ContactHomepageDto contactHomepageDto) {
+		return contactHomepageDao.delete(contactHomepageDto);
+	}
+	
+	public int uelete(ContactHomepageDto contactHomepageDto) {
+		return contactHomepageDao.uelete(contactHomepageDto);
+	}
 }

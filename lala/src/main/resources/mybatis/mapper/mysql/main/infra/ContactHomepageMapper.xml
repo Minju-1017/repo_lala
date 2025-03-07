@@ -13,6 +13,8 @@
 		    contact_seq
 		FROM
 			contact_homepage
+		WHERE 1=1
+			AND isDel=0
 	</select>
 	
 	<select id="selectOne" resultMap="resultMapObj">
@@ -32,12 +34,14 @@
 		(
 			main,
 		    url,
+		    isDel,
 		    contact_seq
 		)
 		VALUES
 		(
 			#{main},
 		    #{url},
+		    0,
 		    #{contact_seq}
 		)
 	</insert>
@@ -51,4 +55,17 @@
 			seq=#{seq}
 	</update>
 	
+	<delete id="delete">
+		DELETE FROM contact_homepage
+		WHERE 1=1
+			AND seq=#{seq}
+	</delete>
+	
+	<update id="uelete">
+		UPDATE contact_homepage
+		SET
+			isDel=1
+		WHERE
+			seq=#{seq}
+	</update>
 </mapper>

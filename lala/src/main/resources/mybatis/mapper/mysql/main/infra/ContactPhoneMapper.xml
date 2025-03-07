@@ -14,6 +14,8 @@
 		    contact_seq
 		FROM
 			contact_phone
+		WHERE 1=1
+			AND isDel=0
 	</select>
 	
 	<select id="selectOne" resultMap="resultMapObj">
@@ -35,6 +37,7 @@
 			main,
 		    type,
 		    number,
+		    isDel,
 		    contact_seq
 		)
 		VALUES
@@ -42,6 +45,7 @@
 			#{main},
 		    #{type},
 		    #{number},
+		    0,
 		    #{contact_seq}
 		)
 	</insert>
@@ -52,6 +56,20 @@
 			main=#{main},
 		    type=#{type},
 		    number=#{number}
+		WHERE
+			seq=#{seq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM contact_phone
+		WHERE 1=1
+			AND seq=#{seq}
+	</delete>
+	
+	<update id="uelete">
+		UPDATE contact_phone
+		SET
+		    isDel=1
 		WHERE
 			seq=#{seq}
 	</update>

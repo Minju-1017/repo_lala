@@ -11,5 +11,7 @@ public interface ContactMemorydayDao {
 	public ContactMemorydayDto selectOne(ContactMemorydayDto contactMemorydayDto); 
 	public int insert(ContactMemorydayDto contactMemorydayDto);
 	public int update(ContactMemorydayDto contactMemorydayDto);
+	public int delete(ContactMemorydayDto contactMemorydayDto);
+	public int uelete(ContactMemorydayDto contactMemorydayDto);
 	
 }

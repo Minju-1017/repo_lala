@@ -25,4 +25,12 @@ public class ContactPhoneService {
 	public int update(ContactPhoneDto contactPhoneDto) {
 		return contactPhoneDao.update(contactPhoneDto);
 	}
+	
+	public int delete(ContactPhoneDto contactPhoneDto) {
+		return contactPhoneDao.delete(contactPhoneDto);
+	}
+	
+	public int uelete(ContactPhoneDto contactPhoneDto) {
+		return contactPhoneDao.uelete(contactPhoneDto);
+	}
 }

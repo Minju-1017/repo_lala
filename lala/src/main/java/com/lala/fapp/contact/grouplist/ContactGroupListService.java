@@ -25,4 +25,12 @@ public class ContactGroupListService {
 	public int update(ContactGroupListDto contactGroupListDto) {
 		return contactGroupListDao.update(contactGroupListDto);
 	}
+	
+	public int delete(ContactGroupListDto contactGroupListDto) {
+		return contactGroupListDao.delete(contactGroupListDto);
+	}
+	
+	public int uelete(ContactGroupListDto contactGroupListDto) {
+		return contactGroupListDao.uelete(contactGroupListDto);
+	}
 }

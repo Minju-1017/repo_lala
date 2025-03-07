@@ -51,4 +51,18 @@ public class ContactHomepageController {
 		return "redirect:/contact/homepage/contactHomepageXdmList";
 	}
 	
+	@RequestMapping(value = "/contact/homepage/contactHomepageXdmDele")
+	public String contactHomepageXdmDele(ContactHomepageDto contactHomepageDto) {
+		contactHomepageService.delete(contactHomepageDto);
+		
+		return "redirect:/contact/homepage/contactHomepageXdmList";
+	}
+	
+	@RequestMapping(value = "/contact/homepage/contactHomepageXdmUele")
+	public String contactHomepageXdmUele(ContactHomepageDto contactHomepageDto) {
+		contactHomepageService.uelete(contactHomepageDto);
+		
+		return "redirect:/contact/homepage/contactHomepageXdmList";
+	}
+	
 }

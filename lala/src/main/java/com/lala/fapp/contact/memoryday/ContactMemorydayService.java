@@ -25,4 +25,12 @@ public class ContactMemorydayService {
 	public int update(ContactMemorydayDto contactMemorydayDto) {
 		return contactMemorydayDao.update(contactMemorydayDto);
 	}
+	
+	public int delete(ContactMemorydayDto contactMemorydayDto) {
+		return contactMemorydayDao.delete(contactMemorydayDto);
+	}
+	
+	public int uelete(ContactMemorydayDto contactMemorydayDto) {
+		return contactMemorydayDao.uelete(contactMemorydayDto);
+	}
 }

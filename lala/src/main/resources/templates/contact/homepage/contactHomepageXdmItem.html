@@ -18,7 +18,24 @@
 	
 	<a href="/contact/homepage/contactHomepageXdmList">목록</a>
 	<a th:href="@{/contact/homepage/contactHomepageXdmMfom(seq=${contactHomepageItem.seq})}">수정</a>
-	<a href="">삭제</a>
+	<a th:href="@{/contact/homepage/contactHomepageXdmDele(seq=${contactHomepageItem.seq})}"
+		id="delete">삭제</a>
+	<a th:href="@{/contact/homepage/contactHomepageXdmUele(seq=${contactHomepageItem.seq})}"
+		id="uelete">삭제(업데이트)</a>
+	
+	<script type="text/javascript">
+		document.getElementById("delete").onclick = function() {
+			if (!comfirm("정말 삭제하시겠습니까?")) {
+				return false;
+			}
+		}
+		
+		document.getElementById("uelete").onclick = function() {
+			if (!comfirm("정말 삭제하시겠습니까?")) {
+				return false;
+			}
+		}
+	</script>
 	
 </body>
 </html>

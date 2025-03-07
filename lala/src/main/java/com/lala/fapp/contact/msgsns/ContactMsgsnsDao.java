@@ -11,5 +11,7 @@ public interface ContactMsgsnsDao {
 	public ContactMsgsnsDto selectOne(ContactMsgsnsDto contactMsgsnsDto); 
 	public int insert(ContactMsgsnsDto contactMsgsnsDto);
 	public int update(ContactMsgsnsDto contactMsgsnsDto);
+	public int delete(ContactMsgsnsDto contactMsgsnsDto);
+	public int uelete(ContactMsgsnsDto contactMsgsnsDto);
 	
 }

@@ -11,5 +11,7 @@ public interface ContactHomepageDao {
 	public ContactHomepageDto selectOne(ContactHomepageDto contactHomepageDto); 
 	public int insert(ContactHomepageDto contactHomepageDto); 
 	public int update(ContactHomepageDto contactHomepageDto); 
+	public int delete(ContactHomepageDto contactHomepageDto); 
+	public int uelete(ContactHomepageDto contactHomepageDto); 
 	
 }

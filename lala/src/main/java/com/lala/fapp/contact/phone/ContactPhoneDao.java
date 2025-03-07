@@ -11,5 +11,7 @@ public interface ContactPhoneDao {
 	public ContactPhoneDto selectOne(ContactPhoneDto contactPhoneDto); 
 	public int insert(ContactPhoneDto contactPhoneDto);
 	public int update(ContactPhoneDto contactPhoneDto);
+	public int delete(ContactPhoneDto contactPhoneDto);
+	public int uelete(ContactPhoneDto contactPhoneDto);
 	
 }
