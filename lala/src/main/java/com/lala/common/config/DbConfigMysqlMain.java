@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 /**
  * Spring Boot 설정 파일 
  * 
- * 아래 Code 넣고, import 해주기
+ * 아래 Code 넣고, import 해주기 //
  */
 
 
